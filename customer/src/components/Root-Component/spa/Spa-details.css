@@ -1,0 +1,438 @@
+.detailed-spa-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    height: 100%;
+    margin-top: 10rem;
+}
+
+.spa-details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+}
+
+.spa-details-img {
+    margin-bottom: 2rem;
+    width: 80%;
+    height: 30rem;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px 0px rgb(229, 229, 229);
+}
+
+.spa-details-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    padding: 0;
+}
+
+
+
+.detailed-spa-container .spa-details-section .headings h2 {
+    margin-bottom: 1rem;
+    font-family: "Rajdhani, sans-serif";
+    text-align: center;
+
+}
+
+.detailed-spa-container .spa-details-section .headings h4 {
+    margin-bottom: 1.5rem;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.spa-details-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.spa-details-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    width: 60%;
+}
+
+.spa-details-content ul li {
+    margin-bottom: 0.5rem;
+    text-align: justify;
+    line-height: 2rem;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+
+.detailed-spa-container .form {
+    border: 1px solid rgb(209, 209, 209);
+    width: 30%;
+    height: 35rem;
+    display: flex;
+    border-radius:2rem ;
+    box-shadow: 2px 2px 20px 2px lightgrey ;
+    background-color: #d7f7f9;
+
+}
+
+.detailed-spa-container .form form {
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0.5rem;
+
+
+}
+
+.detailed-spa-container .form form .form-group {
+    margin-bottom: 10px;
+}
+
+.detailed-spa-container .form form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    float: left;
+}
+
+.detailed-spa-container .form form input[type="text"],
+.detailed-spa-container .form form input[type="email"],
+.detailed-spa-container .form form input[type="tel"],
+.detailed-spa-container .form form input[type="date"],
+.detailed-spa-container .form form input[type="number"] 
+    {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 2rem;
+    outline: none;
+}
+
+.detailed-spa-container .form form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.detailed-spa-container .form form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.detailed-spa-container .form form div:last-child {
+    /* border:1px solid black; */
+    justify-content: center;
+    display: flex;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #ffcc03;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffc400;
+}
+
+
+.property-locations {
+    margin-top: 6rem;
+    margin-bottom: 0rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+
+.property-locations .location-header {
+    display: flex;
+    justify-content: center;
+
+}
+
+.property-locations .dummy-border {
+    width: 10%;
+    margin: auto;
+    border: 1px solid grey;
+}
+
+.property-locations .location-header div:first-child {
+    /* border: 1px solid black; */
+}
+
+.property-locations .location-header h3 {
+    margin-left: 1rem;
+    color: black;
+}
+
+
+.property-locations .location-addresses {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+    /* border: 1px solid black; */
+
+}
+
+.property-locations .location-addresses .address-section {
+    width: 17%;
+    padding: 0.5rem;
+
+}
+
+.property-locations .location-addresses .address-section h6 {
+    color: black;
+    font-weight: 700;
+}
+
+
+
+.property-locations .location-addresses section div {
+    width: 90%;
+    border-collapse: collapse;
+    border: 0.1px solid rgb(220, 218, 218);
+
+}
+
+.property-locations .location-addresses section p {
+    padding: 0.2rem;
+    color: black;
+    font-weight: 500;
+
+}
+
+
+
+
+@media only screen and (max-width:900px) {
+    .detailed-spa-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        height: 100%;
+        margin-top: 4rem;
+        width: 100%;
+    }
+
+    .spa-details-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0rem;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .spa-details-img {
+        margin-bottom: 2rem;
+        width: 100%;
+        height: 20rem;
+        border: 1px solid black;
+        box-shadow: 5px 5px 20px 0px rgb(229, 229, 229);
+    }
+
+    .spa-details-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        padding: 0;
+    }
+
+
+
+    .detailed-spa-container .spa-details-section .headings h2 {
+        margin-bottom: 1rem;
+        font-family: "Rajdhani, sans-serif";
+        text-align: center;
+
+    }
+
+    .detailed-spa-container .spa-details-section .headings h4 {
+        margin-bottom: 1.5rem;
+        font-family: "Rajdhani, sans-serif";
+        text-align: center;
+
+    }
+
+    .spa-details-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .spa-details-content ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .spa-details-content ul li {
+        margin-bottom: 0.5rem;
+        text-align: justify;
+        line-height: 2rem;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+
+    .detailed-spa-container .form {
+        /* border: 1px solid black; */
+        width: 100%;
+        display: flex;
+    }
+
+    .detailed-spa-container .form form {
+        /* border: 1px solid black; */
+        width: 90%;
+        margin: auto;
+
+
+    }
+
+    .detailed-spa-container .form form .form-group {
+        margin-bottom: 10px;
+    }
+
+    .detailed-spa-container .form form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        float: left;
+    }
+
+    .detailed-spa-container .form form input[type="text"],
+    .detailed-spa-container .form form input[type="email"],
+    .detailed-spa-container .form form input[type="tel"],
+    .detailed-spa-container .form form input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        height: 2rem;
+    }
+
+    .detailed-spa-container .form form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .detailed-spa-container .form form input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .detailed-spa-container .form form div:last-child {
+        /* border:1px solid black; */
+        justify-content: center;
+        display: flex;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #ffcc03;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #ffc400;
+    }
+
+
+    /* property-locations */
+
+    .property-locations {
+        margin-top: 6rem;
+        margin-bottom: 0rem;
+
+        /* border: 1px solid black; */
+    }
+
+
+    .property-locations .location-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .property-locations .dummy-border {
+        width: 25%;
+        margin: auto;
+        border: 1px solid grey;
+    }
+
+    .property-locations .location-header div:first-child {
+        /* border: 1px solid black; */
+    }
+
+    .property-locations .location-header h3 {
+        margin-left: 1rem;
+        color: black;
+    }
+
+
+    .property-locations .location-addresses {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+        /* border: 1px solid black; */
+
+    }
+
+    .property-locations .location-addresses .address-section {
+        width: 90%;
+        margin: auto;
+        padding: 0.5rem;
+        text-align: center;
+        margin-top: 2rem;
+
+    }
+
+    .property-locations .location-addresses .address-section h6 {
+        color: black;
+    }
+
+
+
+    .property-locations .location-addresses section div {
+        width: 70%;
+        border-collapse: collapse;
+        margin: auto;
+        border: 0.1px solid rgb(220, 218, 218);
+
+    }
+
+    .property-locations .location-addresses section p {
+        padding: 0.2rem;
+    }
+
+
+    
+}

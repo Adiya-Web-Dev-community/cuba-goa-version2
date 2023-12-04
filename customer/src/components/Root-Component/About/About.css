@@ -1,0 +1,186 @@
+.aboutus-wrapper {
+    /* background-color: red; */
+    padding: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    /* border: 1px solid black; */
+    background-color: rgb(250, 229, 209);
+    padding-top: 14rem;
+
+}
+
+.aboutus-wrapper .title {
+    margin-bottom: 3rem;
+    font-family: 'alkatra';
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.aboutus-wrapper .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    height: 25rem;
+    padding-bottom: 0;
+    /* border: 1px solid black; */
+    /* 16:9 aspect ratio */
+}
+
+.aboutus-wrapper .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.aboutus-wrapper .carousel-item.active {
+    opacity: 1;
+}
+
+.aboutus-body {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.aboutus-lb {
+    position: relative;
+    width: 50%;
+    height: fit-content;
+    margin-top: 1rem;
+    padding-right: 25px;
+    /* border: 1px solid black; */
+}
+
+.aboutus-rb {
+    align-self: center;
+    width: 50%;
+}
+
+.aboutus-rb>img {
+    height: auto;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.aboutus-wrapper .aboutus-lb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutus-wrapper .aboutus-body .aboutus-lb p {
+    text-align: justify;
+    font-family: 'candara';
+}
+
+.abt-us-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+
+@media only screen and (max-width:900px) {
+    .aboutus-wrapper {
+        /* background-color: red; */
+        padding: 1rem;
+        margin-top: 5rem;
+        width: 100%;
+    }
+
+    .aboutus-body {
+        width: 100%;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .aboutus-wrapper .aboutus-body .aboutus-lb p {
+        padding-left: 5px;
+        padding-right: 0px;
+        margin-top: 2rem;
+    }
+
+    .aboutus-lb {
+        width: 100%;
+        height: fit-content;
+        margin-top: 1rem;
+        padding: 5px;
+    }
+
+    .aboutus-rb {
+        align-self: center;
+        width: 100%;
+    }
+
+    .aboutus-rb>img {
+        height: auto;
+        width: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .aboutus-wrapper .title {
+        margin-top: 5rem;
+        font-family: 'alkatra';
+        text-align: center;
+        letter-spacing: 3px;
+    }
+
+    .aboutus-wrapper .carousel-inner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 29rem;
+        padding-bottom: 0;
+        /* border: 1px solid black; */
+        /* 16:9 aspect ratio */
+    }
+
+    .aboutus-wrapper .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .aboutus-wrapper .carousel-item.active {
+        opacity: 1;
+    }
+
+    .aboutus-wrapper .aboutus-lb img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+@media only screen and (max-width:600px) {
+    .aboutus-wrapper .title {
+        font-size: 16px;
+    }
+
+    .aboutus-wrapper .aboutus-body .aboutus-lb p {
+        text-align: justify;
+        font-family: 'candara';
+        font-size: 15px;
+    }
+
+    .aboutus-lb>div>h6 {
+        font-size: 15px;
+    }
+}

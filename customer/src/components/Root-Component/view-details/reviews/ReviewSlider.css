@@ -1,0 +1,194 @@
+.swiper {
+    width: 80%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-position: center;
+    width: 350px;
+    background-size: cover;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-Swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-controller {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.swiper-pagination {
+    /* padding-top: 7px; */
+    border: 1px solid black;
+}
+
+#slider {
+    margin-top: 50px;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 350px;
+    width: 350px;
+    padding: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+
+.review-card-r1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.review-card-r1>section:nth-child(2) {
+    text-align: left;
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+
+.testmonials-img {
+    width: 45px;
+    /* border: 1px solid black; */
+    padding-top: 25px;
+    /* height: 56px; */
+}
+
+.review-card-r2 {
+    width: 250px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.review-card-r3 {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.nxt-prex-pgntion {
+    width: 150px;
+    margin: auto;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.swiper-prev-btn {
+    padding-top: 0px;
+    /* border: 1px solid black; */
+    font-size: 25px;
+    color: #2956b8;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.swiper-nxt-btn {
+    margin-left: 15px;
+    /* border: 1px solid black; */
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    color: #2956b8;
+    cursor: pointer;
+}
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 640px) {
+    .swiper {
+        /* width: 100%; */
+    }
+
+    .my-Swiper {
+        margin: 0px;
+    }
+
+    .review-card {
+        /* border: 1px solid black; */
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        width: 350px;
+        margin: 0px;
+        /* padding: 15px; */
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    }
+
+
+    .review-card-r1 {}
+
+    .review-card-r1>section {}
+
+    .rating-stars {
+        width: 16px;
+        height: 16px;
+    }
+
+    .review-card-r1>section>div:nth-child(2)>p:nth-child(1) {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .review-card-r1>section>div:nth-child(2)>p:nth-child(2) {
+        font-size: 14px;
+    }
+
+    .review-card-r1>section>div:nth-child(2) {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .testmonials-img {
+        width: 32px;
+    }
+
+    .review-card-r2 {
+        width: 210px;
+        margin-top: 12px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .review-card-r3 {
+        width: 210px;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .swiper-prev-btn {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+
+    .swiper-nxt-btn {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+}

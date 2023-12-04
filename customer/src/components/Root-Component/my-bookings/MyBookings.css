@@ -1,0 +1,264 @@
+.my-bookings-wrapper {
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 0rem;
+    width: 100%;
+    padding-top: 11rem;
+    padding-bottom: 29rem;
+}
+
+.my-bookings-wrapper h3 {
+    text-align: center;
+}
+
+.my-bookings-wrapper .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.booking-card {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.booking-card:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.booking-card .resort-details div {
+    text-align: center;
+    border: 1px solid black;
+    width: 100%;
+}
+
+
+.booking-card .row1 {
+    display: flex;
+}
+
+
+.resort-details {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+.room-type {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.capacity {
+    color: #666;
+    font-size: 1.1em;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.booking-dates {
+    margin-bottom: 20px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.booking-rate {
+    margin-bottom: 20px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.rate {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.total-amount {
+    color: #666;
+    font-size: 1em;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.revbtn-wrap {
+    /* border:1px solid black; */
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+
+}
+
+.review-btn-wrap2 {
+    display: none;
+}
+
+.review-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.3rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.review-btn:hover {
+    background-color: #3e8e41;
+}
+
+
+
+@media only screen and (max-width:900px) {
+    .my-bookings-wrapper {
+        /* border: 1px solid black; */
+        margin: auto;
+        margin-top: 0rem;
+        width: 100%;
+        height: fit-content;
+        background-color: #e7fae8;
+        padding: 1rem;
+        padding-top: 5rem;
+
+    }
+
+    .my-bookings-wrapper h3 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .my-bookings-wrapper .wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .booking-card {
+        width: 98%;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: box-shadow 0.3s ease-in-out;
+        margin-top: 1.5rem;
+    }
+
+    .booking-card:hover {
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .booking-card .resort-details div {
+        text-align: center;
+        border: 1px solid black;
+        width: 100%;
+    }
+
+
+    .booking-card .row1 {
+        display: flex;
+    }
+
+
+    .resort-details {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+
+    .room-type {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .capacity {
+        color: #666;
+        font-size: 1.1em;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .booking-dates {
+        margin-bottom: 20px;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .booking-rate {
+        margin-bottom: 20px;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .rate {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .total-amount {
+        color: #666;
+        font-size: 1em;
+        font-family: "Rajdhani, sans-serif";
+
+    }
+
+    .revbtn-wrap {
+        /* border:1px solid black; */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .review-btn-wrap1 {
+        display: none;
+    }
+
+
+    .review-btn-wrap2 {
+        display: block;
+        margin-top: 0;
+    }
+
+    .review-btn-wrap2 .review-btn {
+        display: block;
+        margin-top: 1rem;
+        float: right;
+    }
+
+    .review-btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 0.3rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .review-btn:hover {
+        background-color: #3e8e41;
+    }
+}

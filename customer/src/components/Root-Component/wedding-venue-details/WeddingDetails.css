@@ -1,0 +1,173 @@
+.view-details-wrapper .conviniences {
+  /* border: 1px solid black; */
+  width: 85%;
+  margin: auto;
+}
+
+.view-details-wrapper .conviniences h4 {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.view-details-wrapper .conviniences .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.view-details-wrapper .conviniences .wrap p {
+  width: 10rem;
+  padding: 0.1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-right: 1px solid rgb(171, 211, 248);
+  color: rgb(1, 1, 76);
+  text-align: center;
+}
+
+.view-details-wrapper .conviniences .wrap p:last-child {
+  border: none;
+}
+
+/* weddingenquiry-form-wrap */
+
+.weddingenquiry-form-wrap {
+  width: 85%;
+  margin: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.weddingenquiry-form-wrap h4 {
+  text-align: center;
+}
+
+.weddingenquiry-form-wrap .enquiry-form {
+  width: 75%;
+  margin: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.weddingenquiry-form-wrap .enquiry-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.weddingenquiry-form-wrap .enquiry-form .form-group label {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.weddingenquiry-form-wrap .enquiry-form .form-group input {
+  width: 15rem;
+  outline: none;
+  height: 3rem;
+  border: 0;
+  border-radius: 0.2rem;
+  padding-left: 0.5rem;
+
+  background-color: rgb(249, 248, 248);
+  border-bottom: 1px solid Black;
+}
+
+.weddingenquiry-form-wrap .enquiry-form .form-group select {
+  height: 3rem;
+  width: 20rem;
+  outline: none;
+  border: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.weddingenquiry-form-wrap .enquiry-form .form-group .custom-date-input {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding-right: 0.5rem;
+}
+
+.weddingenquiry-form-wrap
+  .enquiry-form
+  .form-group
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  color: black !important;
+  padding-right: 0.5rem;
+}
+
+.weddingenquiry-form-wrap
+  .enquiry-form
+  .form-group
+  input[type="time"]::-webkit-calendar-picker-indicator {
+  padding-right: 0.5rem;
+}
+.weddingenquiry-form-wrap .enquiry-form .form-group textarea {
+  min-width: 60rem;
+  max-width: 60rem;
+  min-height: 10rem;
+  max-height: 10rem;
+
+  border: 0;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: rgb(195, 226, 237);
+  padding: 0.5rem 1rem;
+}
+
+/* weddingenquiry-form-wrap ends */
+
+@media only screen and (max-width: 900px) {
+  .view-details-wrapper .conviniences {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+  }
+
+  .view-details-wrapper .conviniences h4 {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .view-details-wrapper .conviniences .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  .view-details-wrapper .conviniences .wrap p {
+    width: 7rem;
+    padding: 0.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-right: 0;
+    flex: 1 1 100px;
+  }
+
+  .view-details-wrapper .conviniences .wrap p:first-child,
+  .view-details-wrapper .conviniences .wrap p:nth-child(2),
+  .view-details-wrapper .conviniences .wrap p:nth-child(4),
+  .view-details-wrapper .conviniences .wrap p:nth-child(5) {
+    border-right: 1px solid rgb(170, 221, 247);
+  }
+
+  .view-details-wrapper .conviniences .wrap p:last-child {
+    border: none;
+  }
+}

@@ -1,0 +1,590 @@
+:root {
+    --lightblue: rgb(221, 246, 246);
+    --outer-box-border: 1px solid rgb(205, 204, 204);
+    --blue-font: darkblue;
+}
+
+.bookingsummaryheading {
+    /* border: 1px solid black; */
+    width: 70%;
+    margin: auto;
+    margin-top: 12rem;
+    font-weight: normal;
+}
+
+.bookingsummaryheading h4 {
+    margin-left: 1rem;
+}
+
+.booking-page-wrapper {
+    /* border: 1px solid black; */
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    gap: 1rem;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+
+/* col1  */
+.booking-page-wrapper .col1 {
+    /* border: 1px solid black; */
+    width: 45%;
+    /* padding: 0.5rem; */
+}
+
+
+.booking-page-wrapper .col1 .row1 {
+    margin-top: 1rem;
+    border: var(--outer-box-border);
+    padding: 1rem 0.5rem;
+}
+
+.booking-page-wrapper .col1 .row1 .dates {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.booking-page-wrapper .col1 .row1 .dates div {
+    width: 50%;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    /* border: 1px solid red;  */
+}
+
+.booking-page-wrapper .col1 .row1 .dates div p {
+    /* border: 1px solid black; */
+    font-weight: bold;
+    height: 3rem;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0;
+}
+
+.booking-page-wrapper .col1 .row1 .dates div:first-child {
+    border-right: 1px solid lightgrey;
+}
+
+.booking-page-wrapper .col1 .row1 .dates div lable {
+    font-weight: bold;
+}
+
+.booking-page-wrapper .col1 .row1 .dates div input {
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem 0.5rem;
+    outline: none;
+}
+
+/* .booking-page-wrapper .col1 .row1 .dummy-border {
+    border: 0.5px solid lightgrey;
+} */
+
+
+.booking-page-wrapper .row1 .selectRooms {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.booking-page-wrapper .row1 .selectRooms lable {
+    font-weight: bold;
+}
+
+
+.booking-page-wrapper .row1 .selectRooms input {
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    margin-top: 0.5rem;
+}
+
+.booking-page-wrapper .col1 .row2 {
+    margin-top: 1rem;
+    border: var(--outer-box-border);
+}
+
+.booking-page-wrapper .col1 .row2 div {
+    padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+    background-color: rgb(221, 246, 246);
+}
+
+
+
+.booking-page-wrapper .col1 .row2>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border:1px solid black; */
+}
+
+.booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap {
+    display: flex;
+    /* background-color: red; */
+}
+
+.booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap div {
+    padding: 0;
+}
+
+.booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap div img {
+    padding: 0;
+    margin: 0.5rem 0.5rem 0 0;
+    height: fit-content;
+    opacity: 0.4;
+
+}
+
+.booking-page-wrapper .col1 .row3 {
+    /* border: 1px solid black; */
+    margin-top: 1rem;
+    padding: 0.5rem;
+    height: fit-content;
+}
+
+.booking-page-wrapper .col1 .row3 details summary {
+    color: var(--blue-font);
+}
+
+
+.booking-page-wrapper .col1 .row3 details p ul {
+    /* background-color: grey; */
+    padding: 0rem 0rem 0rem 2rem;
+}
+
+
+/* col1 ends */
+
+
+/* col2 */
+.booking-page-wrapper .col2 {
+    /* border: 1px solid black; */
+    width: 60%;
+    padding: 1rem 0.5rem;
+}
+
+.booking-page-wrapper .col2 .row1 {
+    border: var(--outer-box-border);
+    display: flex;
+    padding: 0.5rem;
+}
+
+.booking-page-wrapper .col2 .row1 div:first-child {
+    width: 35%;
+    height: 13rem;
+    padding: 0;
+}
+
+.booking-page-wrapper .col2 .row1 div:first-child img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.booking-page-wrapper .col2 .row1>div:last-child {
+    /* background-color: yellow; */
+    padding: 0.5rem 1rem;
+}
+
+.booking-page-wrapper .col2 .row1>div:last-child section {
+    /* border: 1px solid black; */
+    display: flex;
+    height: fit-content;
+
+}
+
+.booking-page-wrapper .col2 .row1>div:last-child section div {
+    /* background-color: red; */
+    height: fit-content;
+    font-weight: bold;
+}
+
+.booking-page-wrapper .col2 .row1>div:last-child section div span {
+    margin-left: 0.5rem;
+    font-size: 1.3rem;
+}
+
+
+
+.booking-page-wrapper .col2 .row2 {
+    margin-top: 1rem;
+}
+
+.booking-page-wrapper .col2 .row2 div:first-child {
+    padding: 0.2rem 1rem;
+    background-color: var(--lightblue);
+    border: var(--outer-box-border);
+}
+
+
+.booking-page-wrapper .col2 .row2 table {
+    border: var(--outer-box-border);
+    width: 100%;
+
+}
+
+.booking-page-wrapper .col2 .row2 table tr {
+    display: flex;
+    padding-left: 1rem;
+}
+
+.booking-page-wrapper .col2 .row2 table tr td {
+    width: 35%;
+    padding: 0.3rem;
+}
+
+
+.booking-page-wrapper .col2 .row3 {
+    padding: 1rem 0.5rem;
+}
+
+.booking-page-wrapper .col2 .row3 details summary {
+    color: var(--blue-font);
+}
+
+.booking-page-wrapper .col2 .row3 details p ul {
+    padding-left: 2rem;
+}
+
+
+
+.booking-page-wrapper .col2 .row4 {
+    border: var(--outer-box-border);
+    padding: 1rem;
+    background-color: var(--lightblue);
+}
+
+.booking-page-wrapper .col2 .row4>p:nth-child(3) {
+    /* not accepting 2 in div:nth-child() so for now taken 3 check again later*/
+    padding-bottom: 1rem;
+    border-bottom: var(--outer-box-border);
+}
+
+.booking-page-wrapper .col2 .row4 div {
+    width: 100%
+}
+
+.booking-page-wrapper .col2 .row4 div textarea {
+    min-height: 7rem;
+    max-height: 10rem;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border: var(--outer-box-border);
+}
+
+.booking-page-wrapper .col2 .row4 div textarea::placeholder {
+    opacity: 0.4;
+    font-size: 0.9rem;
+}
+
+.booking-page-wrapper .col2 .row5 {
+    /* background-color: red; */
+    margin-top: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* col2 ends */
+
+
+
+/* col2 ends */
+
+
+@media only screen and (max-width:900px) {
+
+    .bookingsummaryheading {
+        /* border: 1px solid black; */
+        width: 98%;
+        margin: auto;
+        margin-top: 6.5rem;
+        font-weight: normal;
+    }
+
+    .bookingsummaryheading h4 {
+        margin-left: 1rem;
+    }
+
+    .booking-page-wrapper {
+        /* border: 1px solid black; */
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        width: 98%;
+        gap: 0rem;
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+
+
+    /* col1  */
+    .booking-page-wrapper .col1 {
+        /* border: 1px solid black; */
+        width: 100%;
+        /* padding: 0.5rem; */
+    }
+
+
+    .booking-page-wrapper .col1 .row1 {
+        margin-top: 1rem;
+        border: var(--outer-box-border);
+        padding: 1rem 0.5rem;
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates {
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates div {
+        width: 50%;
+        padding: 0.5rem 0.5rem 0rem 0.5rem;
+        /* border: 1px solid red;  */
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates div p {
+        /* border: 1px solid black; */
+        font-weight: bold;
+        height: 3rem;
+        padding: 0.5rem 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates div:first-child {
+        border-right: 1px solid lightgrey;
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates div lable {
+        font-weight: bold;
+    }
+
+    .booking-page-wrapper .col1 .row1 .dates div input {
+        width: 100%;
+        height: 3rem;
+        padding: 0.5rem 0.5rem;
+        outline: none;
+    }
+
+    /* .booking-page-wrapper .col1 .row1 .dummy-border {
+        border: 0.5px solid lightgrey;
+    } */
+
+
+    .booking-page-wrapper .row1 .selectRooms {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .booking-page-wrapper .row1 .selectRooms lable {
+        font-weight: bold;
+    }
+
+
+    .booking-page-wrapper .row1 .selectRooms input {
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+        outline: none;
+        margin-top: 0.5rem;
+    }
+
+    .booking-page-wrapper .col1 .row2 {
+        margin-top: 1rem;
+        border: var(--outer-box-border);
+    }
+
+    .booking-page-wrapper .col1 .row2 div {
+        padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+        background-color: rgb(221, 246, 246);
+    }
+
+
+
+    .booking-page-wrapper .col1 .row2>div:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border:1px solid black; */
+    }
+
+    .booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap {
+        display: flex;
+        /* background-color: red; */
+    }
+
+    .booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap div {
+        padding: 0;
+    }
+
+    .booking-page-wrapper .col1 .row2>div:last-child .totalamount-wrap div img {
+        padding: 0;
+        margin: 0.5rem 0.5rem 0 0;
+        height: fit-content;
+        opacity: 0.4;
+
+    }
+
+    .booking-page-wrapper .col1 .row3 {
+        /* border: 1px solid black; */
+        margin-top: 1rem;
+        padding: 0.5rem;
+        height: fit-content;
+    }
+
+    .booking-page-wrapper .col1 .row3 details summary {
+        color: var(--blue-font);
+    }
+
+
+    .booking-page-wrapper .col1 .row3 details p ul {
+        /* background-color: grey; */
+        padding: 0rem 0rem 0rem 2rem;
+    }
+
+
+    /* col1 ends */
+
+
+    /* col2 */
+    .booking-page-wrapper .col2 {
+        /* border: 1px solid black; */
+        width: 100%;
+        padding: 1rem 0.5rem;
+    }
+
+    .booking-page-wrapper .col2 .row1 {
+        border: var(--outer-box-border);
+        display: flex;
+        padding: 0.5rem;
+    }
+
+    .booking-page-wrapper .col2 .row1 div:first-child {
+        width: 55%;
+        height: 15rem;
+        padding: 0;
+    }
+
+    .booking-page-wrapper .col2 .row1 div:first-child img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .booking-page-wrapper .col2 .row1>div:last-child {
+        /* background-color: yellow; */
+        padding: 0.5rem 1rem;
+    }
+
+    .booking-page-wrapper .col2 .row1>div:last-child section {
+        /* border: 1px solid black; */
+        display: flex;
+        height: fit-content;
+
+    }
+
+    .booking-page-wrapper .col2 .row1>div:last-child section div {
+        /* background-color: red; */
+        height: fit-content;
+        font-weight: bold;
+    }
+
+    .booking-page-wrapper .col2 .row1>div:last-child section div span {
+        margin-left: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+
+
+    .booking-page-wrapper .col2 .row2 {
+        margin-top: 1rem;
+    }
+
+    .booking-page-wrapper .col2 .row2 div:first-child {
+        padding: 0.2rem 1rem;
+        background-color: var(--lightblue);
+        border: var(--outer-box-border);
+    }
+
+
+    .booking-page-wrapper .col2 .row2 table {
+        border: var(--outer-box-border);
+        width: 100%;
+
+    }
+
+    .booking-page-wrapper .col2 .row2 table tr {
+        display: flex;
+        padding-left: 1rem;
+    }
+
+    .booking-page-wrapper .col2 .row2 table tr td {
+        width: 50%;
+        padding: 0.3rem;
+    }
+
+
+    .booking-page-wrapper .col2 .row3 {
+        padding: 1rem 0.5rem;
+    }
+
+    .booking-page-wrapper .col2 .row3 details summary {
+        color: var(--blue-font);
+    }
+
+    .booking-page-wrapper .col2 .row3 details p ul {
+        padding-left: 2rem;
+    }
+
+
+
+    .booking-page-wrapper .col2 .row4 {
+        border: var(--outer-box-border);
+        padding: 1rem;
+        background-color: var(--lightblue);
+    }
+
+    .booking-page-wrapper .col2 .row4>p:nth-child(3) {
+        /* not accepting 2 in div:nth-child() so for now taken 3 check again later*/
+        padding-bottom: 1rem;
+        border-bottom: var(--outer-box-border);
+    }
+
+    .booking-page-wrapper .col2 .row4 div {
+        width: 100%
+    }
+
+    .booking-page-wrapper .col2 .row4 div textarea {
+        min-height: 7rem;
+        max-height: 10rem;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 0.2rem 0.5rem;
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        border: var(--outer-box-border);
+    }
+
+    .booking-page-wrapper .col2 .row4 div textarea::placeholder {
+        opacity: 0.4;
+        font-size: 0.9rem;
+    }
+
+    .booking-page-wrapper .col2 .row5 {
+        /* background-color: red; */
+        margin-top: 1rem;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

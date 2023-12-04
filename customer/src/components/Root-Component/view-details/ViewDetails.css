@@ -1,0 +1,407 @@
+.view-details-wrapper {
+  /* border: 1px solid black; */
+  padding-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.view-details-wrapper .resort-name h2 {
+  font-family: "Geomanist";
+  text-align: center;
+  margin-top: 5.5rem;
+  /* border:1px solid black; */
+}
+
+.view-details-wrapper .section2 {
+  /* border: 1px solid black; */
+  width: 85%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.view-details-wrapper .section2 .property-info {
+  /* border: 1px solid black; */
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.view-details-wrapper .section2 .property-info div {
+}
+
+.view-details-wrapper .section2 .property-info p {
+  padding: 1rem 1rem 1rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-family: "Rajdhani, sans-serif";
+}
+
+.view-details-wrapper .section2 .map {
+  /* border: 1px solid black; */
+  width: 35%;
+  position: relative;
+}
+
+.view-details-wrapper .section2 .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.view-details-wrapper .section3 > h3 {
+  /* background-color: lightblue; */
+  line-height: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.view-details-wrapper .section3 {
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  /* border: 1px solid black; */
+}
+
+.view-details-wrapper .section3 .booking-wrapper {
+  display: flex;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+  /* border: 1px solid black;  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.view-details-roomtable-header {
+  background-color: #3779c7;
+  color: #ffff;
+  /* #3376b0 */
+}
+
+.view-details-roomtable-header .cell {
+  font-size: 16px;
+}
+
+.view-details-roomtable-row {
+  border-bottom: #3376b0;
+}
+
+.view-details-roomtable-row .cell {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+.view-details-roomtable-row .cell span {
+  /* border: 1px solid black; */
+}
+
+.view-details-roomtable-row .cell span:first-child {
+  font-size: 22px;
+}
+
+.view-details-roomtable-row .cell:first-child p {
+  cursor: pointer;
+  color: #00487a;
+}
+
+.view-details-roomtable-row .cell span:last-child {
+  /* margin-left: 15px; */
+  font-size: 18px;
+  /* border: 1px solid black; */
+  margin-top: 10px;
+}
+
+.view-details-roomtable-row .show-prices-btn {
+  background-color: #3376b0;
+  padding: 0%;
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  color: #ffff;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.view-details-roomtable-row .show-prices-btn:hover {
+  background-color: #00487a;
+}
+
+.roomTable-container {
+  padding: 0px 115px;
+}
+
+.roomTable-searchbar {
+}
+
+/* houose rules */
+.view-details-wrapper .house-rule-wrap {
+  width: 85%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.view-details-wrapper .house-rule-wrap > section {
+  border: 1px solid rgb(214, 213, 213);
+  border-radius: 1rem;
+}
+
+.view-details-wrapper .house-rule-wrap > section > div {
+  display: flex;
+  padding: 0.5rem 1rem 0 0.5rem;
+  border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.view-details-wrapper .house-rule-wrap > section div section:first-child {
+  /* background-color: red; */
+  width: 25%;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.view-details-wrapper .house-rule-wrap > section div section:first-child p {
+  margin-left: 1rem;
+}
+
+.view-details-wrapper .house-rule-wrap > section div section:last-child {
+  width: 75%;
+  padding: 0.5rem 1rem;
+  /* background-color: yellow; */
+}
+
+.view-details-wrapper .house-rule-wrap > section div > section {
+  display: flex;
+}
+
+.view-details-wrapper .house-rule-wrap > section div > section {
+}
+
+.view-details-wrapper .house-rule-wrap .childpolicies .row1 {
+  border: 1px solid rgb(231, 231, 231);
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.view-details-wrapper .house-rule-wrap .childpolicies .row1 h6 {
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+  padding-bottom: 0.3rem;
+}
+
+.view-details-wrapper .house-rule-wrap .childpolicies .row1 .inner-row1 {
+  display: flex;
+}
+
+.view-details-wrapper
+  .house-rule-wrap
+  .childpolicies
+  .row1
+  .inner-row1
+  span:last-child {
+  margin-left: 2rem;
+}
+/* house rule ends */
+
+/* dinning */
+.view-details-wrapper .dinning-wrap {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-details-wrapper .dinning-wrap h4 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.view-details-wrapper .dinning-wrap > div {
+  display: flex;
+  border: 1px solid rgb(225, 224, 224);
+  padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.view-details-wrapper .dinning-wrap > div .col1 {
+  width: 40%;
+  text-align: left;
+  /* border: 1px solid black; */
+  margin-bottom: 0;
+  height: 30rem;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 {
+  width: 60%;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row1 {
+  /* border: 1px solid black; */
+  background-color: rgb(219, 237, 243);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row1 span {
+  text-align: center;
+  width: 50%;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row2 {
+  padding: 0 2.5rem;
+  margin-top: 2rem;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row2 p {
+  text-align: justify;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .form-container form .form-row {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row3 {
+  margin-top: 3rem;
+}
+
+.view-details-wrapper .dinning-wrap > div .col2 .row4 button {
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  width: 50%;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  font-weight: normal;
+  background-color: rgb(1, 1, 44);
+  color: white;
+  border-radius: 0.2rem;
+}
+.view-details-wrapper .dinning-wrap .custom-date-input {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* dinning ends */
+
+@media only screen and (max-width: 900px) {
+  .view-details-wrapper {
+    /* border: 1px solid black; */
+    padding-bottom: 2rem;
+  }
+
+  .view-details-wrapper .resort-name h2 {
+    font-family: "Geomanist";
+    text-align: center;
+    margin-top: 3rem;
+    /* border:1px solid black; */
+  }
+
+  .view-details-wrapper .section2 {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .view-details-wrapper .section2 .property-info {
+    /* border:1px solid black; */
+    padding-right: 0.5rem;
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+
+  .view-details-wrapper .section2 .property-info div {
+  }
+
+  .view-details-wrapper .section2 .property-info p {
+    padding: 1rem 0.5rem 1rem 0rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  .view-details-wrapper .section2 .map {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 15rem;
+  }
+
+  .view-details-wrapper .section2 .map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .view-details-wrapper .section3 {
+    margin-top: 1rem;
+  }
+
+  .view-details-wrapper .section3 {
+    width: 100%;
+  }
+
+  .view-details-wrapper .section3 .booking-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+    padding-left: 0rem;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .view-details-wrapper .section3 {
+    width: 100%;
+    margin: auto;
+    margin-top: 0rem;
+    /* border: 1px solid  0black; */
+  }
+
+  .view-details-wrapper .section3 > h3 {
+    /* background-color: lightblue; */
+    line-height: 3rem;
+    padding: 0rem 1rem;
+  }
+
+  .view-details-wrapper .section3 .booking-wrapper {
+    display: flex;
+  }
+
+  .view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+    /* border: 1px solid black;  */
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .roomTable-container {
+    padding: 0px 0px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .view-details-roomtable-row .cell:first-child {
+    min-width: 315px;
+  }
+
+  .view-details-roomtable-row .cell:nth-child(2) {
+    min-width: 150px;
+  }
+
+  .view-details-roomtable-row .cell:last-child {
+    min-width: 115px;
+  }
+}

@@ -1,0 +1,740 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wedding-event-wrap {
+  padding-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+.wedding-event-wrap .outerwrap {
+  border: 1px solid black;
+  height: 36rem;
+  padding: 0;
+  margin-top: 2rem;
+  width: 90%;
+  margin: auto;
+}
+
+.wedding-event-wrap .outerwrap .innerwrap {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wedding-event-wrap .outerwrap .innerwrap .wrap {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+.wedding-event-wrap h1 {
+  font-size: 5.25vmin;
+  text-align: center;
+  color: white;
+}
+
+.wedding-event-wrap p {
+  font-size: max(10pt, 2.5vmin);
+  line-height: 1.4;
+  color: #0e390e;
+  margin-bottom: 1.5rem;
+}
+
+.wedding-event-wrap .wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 85vmin;
+  height: 25em;
+  border: 8px solid;
+  border-image: linear-gradient(-50deg, lightblue, lightblue, #011031, #011031)
+    1;
+  margin: 2rem auto;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.wedding-event-wrap .overlay {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  background: #011031;
+  transition: 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.wedding-event-wrap .overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15vmin;
+  height: 100%;
+  padding: 0.5rem 0 0 0.5rem;
+  border: 3px solid;
+  border-image: linear-gradient(
+      to bottom,
+      #b1a5fd 5%,
+      #b1a5fd 35% 65%,
+      #b1a5fd 95%
+    )
+    0 0 0 100%;
+  transition: 0.3s ease-in-out 0.2s;
+  z-index: 1;
+}
+
+.wedding-event-wrap .content {
+  margin-top: 8rem;
+}
+
+.wedding-event-wrap .content p {
+  color: white;
+}
+
+.wedding-event-wrap .image-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vmin;
+  height: 100%;
+  background-image: url("https://assets.codepen.io/4787486/trees.png");
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.wedding-event-wrap .dots {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 55px;
+  height: 4vmin;
+  transition: 0.3s ease-in-out 0.3s;
+}
+
+.wedding-event-wrap .dot {
+  width: 14px;
+  height: 14px;
+  background: rgb(103, 158, 213);
+  border: 1px solid indigo;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out 0.3s;
+}
+
+.wedding-event-wrap .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  padding: 3vmin 4vmin;
+  background: #fff;
+  box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+  overflow-y: scroll;
+}
+
+.wedding-event-wrap .wrap:hover .overlay {
+  transform: translateX(-60vmin);
+}
+
+.wedding-event-wrap .wrap:hover .image-content {
+  width: 30vmin;
+}
+
+.wedding-event-wrap .wrap:hover .overlay-content {
+  border: none;
+  transition-delay: 0.2s;
+  transform: translateX(60vmin);
+}
+
+.wedding-event-wrap .wrap:hover .dots {
+  transform: translateX(1rem);
+}
+
+.wrap:hover .dots .dot {
+  background: white;
+}
+
+Animations and timing delays .wedding-event-wrap .animate {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+Pop In .wedding-event-wrap .pop {
+  animation-name: pop;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+Slide In .wedding-event-wrap .slide {
+  animation-name: slide;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(4em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+Slide Left .wedding-event-wrap .slide-left {
+  animation-name: slide-left;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translate(-40px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.wedding-event-wrap .slide-up {
+  animation-name: slide-up;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wedding-event-wrap .delay-1 {
+  animation-delay: 0.3s;
+}
+
+.wedding-event-wrap .delay-2 {
+  animation-delay: 0.6s;
+}
+
+.wedding-event-wrap .delay-3 {
+  animation-delay: 0.9s;
+}
+
+.wedding-event-wrap .delay-4 {
+  animation-delay: 1.2s;
+}
+
+.wedding-event-wrap .delay-5 {
+  animation-delay: 1.5s;
+}
+
+.wedding-event-wrap .delay-6 {
+  animation-delay: 1.8s;
+}
+
+.delay-7 {
+  animation-delay: 2.1s;
+}
+
+.wedding-event-wrap .delay-8 {
+  animation-delay: 2.4s;
+}
+
+.eventcontactwrap {
+  width: 30%;
+  margin: auto;
+}
+
+.eventcontactwrap .eventcontactbtn {
+  width: 100%;
+}
+
+.eventcontactwrap .eventcontactbtn:hover {
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .wedding-event-wrap {
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+  }
+
+  .wedding-event-wrap .outerwrap:nth-child(odd) {
+    border: 1px solid black;
+    height: 33rem;
+    padding: 0;
+    width: 95%;
+    margin-left: 0rem;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  .wedding-event-wrap .outerwrap:nth-child(even) {
+    border: 1px solid black;
+    height: 30rem;
+    padding: 0;
+    width: 95%;
+    margin-right: 0rem;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  .wedding-event-wrap .outerwrap .innerwrap {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .wedding-event-wrap .outerwrap:nth-child(odd) .innerwrap .wrap {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .wedding-event-wrap .outerwrap:nth-child(even) .innerwrap .wrap {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .wedding-event-wrap h1 {
+    font-size: 5.25vmin;
+    text-align: center;
+    color: white;
+  }
+
+  .wedding-event-wrap p {
+    font-size: max(10pt, 2.5vmin);
+    line-height: 1.4;
+    color: #0e390e;
+    margin-bottom: 1.5rem;
+  }
+
+  .wedding-event-wrap .wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 85vmin;
+    height: 25em;
+    border: 8px solid;
+    border-image: linear-gradient(
+        -50deg,
+        lightblue,
+        lightblue,
+        #011031,
+        #011031
+      )
+      1;
+    margin: 2rem auto;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wedding-event-wrap .overlay {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    background: #011031;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+  }
+
+  .wedding-event-wrap .overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15vmin;
+    height: 100%;
+    padding: 0.5rem 0 0 0.5rem;
+    border: 3px solid;
+    border-image: linear-gradient(
+        to bottom,
+        #b1a5fd 5%,
+        #b1a5fd 35% 65%,
+        #b1a5fd 95%
+      )
+      0 0 0 100%;
+    transition: 0.3s ease-in-out 0.2s;
+    z-index: 1;
+  }
+
+  .wedding-event-wrap .content {
+    margin-top: 8rem;
+  }
+
+  .wedding-event-wrap .content p {
+    color: white;
+  }
+
+  .wedding-event-wrap .image-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vmin;
+    height: 100%;
+    background-image: url("https://assets.codepen.io/4787486/trees.png");
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+    border: 1px solid green;
+  }
+
+  .wedding-event-wrap .dots {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 55px;
+    height: 4vmin;
+    transition: 0.3s ease-in-out 0.3s;
+  }
+
+  .wedding-event-wrap .dot {
+    width: 14px;
+    height: 14px;
+    background: rgb(103, 158, 213);
+    border: 1px solid indigo;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out 0.3s;
+  }
+
+  .wedding-event-wrap .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vmin;
+    height: 100%;
+    padding: 3vmin 4vmin;
+    background: #fff;
+    box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+    overflow-y: scroll;
+  }
+
+  .wedding-event-wrap .wrap:hover .overlay {
+    transform: translateX(-60vmin);
+  }
+
+  .wedding-event-wrap .wrap:hover .image-content {
+    width: 30vmin;
+  }
+
+  .wedding-event-wrap .wrap:hover .overlay-content {
+    border: none;
+    transition-delay: 0.2s;
+    transform: translateX(0vmin);
+  }
+
+  .wedding-event-wrap .wrap:hover .dots {
+    transform: translateX(1rem);
+  }
+
+  .wrap:hover .dots .dot {
+    background: white;
+  }
+
+  Animations and timing delays .wedding-event-wrap .animate {
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+    animation-fill-mode: backwards;
+  }
+
+  Pop In .wedding-event-wrap .pop {
+    animation-name: pop;
+  }
+
+  @keyframes pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+
+  Slide In .wedding-event-wrap .slide {
+    animation-name: slide;
+  }
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translate(6em, 0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  Slide Left .wedding-event-wrap .slide-left {
+    animation-name: slide-left;
+  }
+
+  @keyframes slide-left {
+    0% {
+      opacity: 0;
+      transform: translate(-20px, 0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  .wedding-event-wrap .slide-up {
+    animation-name: slide-up;
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(3em);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .wedding-event-wrap .delay-1 {
+    animation-delay: 0.3s;
+  }
+
+  .wedding-event-wrap .delay-2 {
+    animation-delay: 0.6s;
+  }
+
+  .wedding-event-wrap .delay-3 {
+    animation-delay: 0.9s;
+  }
+
+  .wedding-event-wrap .delay-4 {
+    animation-delay: 1.2s;
+  }
+
+  .wedding-event-wrap .delay-5 {
+    animation-delay: 1.5s;
+  }
+
+  .wedding-event-wrap .delay-6 {
+    animation-delay: 1.8s;
+  }
+
+  .delay-7 {
+    animation-delay: 2.1s;
+  }
+
+  .wedding-event-wrap .delay-8 {
+    animation-delay: 2.4s;
+  }
+
+  .eventcontactwrap {
+    width: 70%;
+    margin: auto;
+  }
+
+  .eventcontactwrap .eventcontactbtn {
+    width: 100%;
+  }
+} */
+
+.wedding-wrap {
+  width: 100%;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+}
+
+.wedding-wrap > .imgwrap {
+  height: 35rem;
+  width: 100%;
+}
+.wedding-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.wedding-wrap .content {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+.wedding-wrap .content h3 {
+  margin-top: 1rem;
+}
+.wedding-wrap .content p {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+.wedding-wrap .venue-wrap {
+  width: 100%;
+  margin: auto;
+}
+.wedding-wrap .venue-wrap h4 {
+  text-align: center;
+  margin-top: 2rem;
+}
+.wedding-wrap .venue-wrap .wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.wedding-wrap .venue-wrap .wrapper .venuecard {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  overflow: hidden;
+}
+
+.wedding-wrap .venue-wrap .wrapper .venuecard .imgwrap {
+  width: 100%;
+  height: 20rem;
+}
+
+.wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+}
+.wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent .item {
+  flex: 1 1 100px;
+}
+.wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent button {
+  padding: 0.2rem 0.5rem;
+  background-color: lightblue;
+  font-weight: normal;
+  border-radius: 0.2rem;
+}
+
+@media only screen and (max-width: 680px) {
+  .wedding-wrap {
+    width: 100%;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+  }
+
+  .wedding-wrap > .imgwrap {
+    height: 35rem;
+    width: 100%;
+  }
+  .wedding-wrap img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wedding-wrap .content {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 2rem 2rem;
+  }
+  .wedding-wrap .content h3 {
+    margin-top: 1rem;
+  }
+  .wedding-wrap .content p {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .wedding-wrap .venue-wrap {
+    width: 100%;
+    margin: auto;
+  }
+  .wedding-wrap .venue-wrap h4 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .wedding-wrap .venue-wrap .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .wedding-wrap .venue-wrap .wrapper .venuecard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .wedding-wrap .venue-wrap .wrapper .venuecard .imgwrap {
+    width: 100%;
+    height: 20rem;
+  }
+
+  .wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+  }
+  .wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent .item {
+    flex: 1 1 100px;
+  }
+  .wedding-wrap .venue-wrap .wrapper .venuecard .venuecontent button {
+    padding: 0.2rem 1rem;
+    background-color: lightblue;
+    font-weight: normal;
+    border-radius: 0.2rem;
+  }
+}
