@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.registrationWrapper {
+    width: 50%;
+    margin: auto;
+    margin-top: 14rem;
+    border-radius: 1rem;
+    /* background-color: azure; */
+}
+
+.registrationWrapper .houseDealLogo {
+    width: 5rem;
+    height: 5rem;
+}
+
+
+@media only screen and (min-width:200px) and (max-width:1000px) {
+    .registrationWrapper {
+        width: 95%;
+        margin: auto;
+        margin-top: 6rem;
+    }
+}

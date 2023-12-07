@@ -1,0 +1,184 @@
+.gallery-wrap {
+  margin-top: 7rem;
+  /* border:3px solid red; */
+  display: flex;
+  flex-direction: column;
+  /* background: linear-gradient(to right, rgb(171, 172, 172), rgb(232, 233, 233), rgb(232, 233, 233), rgb(171, 172, 172)); */
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+
+.gallery-wrap .header-navbar {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin: auto;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+
+  /* border-bottom: 1px solid rgb(233, 233, 233); */
+}
+
+
+.gallery-wrap .header-navbar div {}
+
+.gallery-wrap .header-navbar div p {
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  /* font-weight: bold; */
+  font-size: 1.1rem;
+  padding: 0.1rem 1rem;
+  cursor: pointer;
+  /* border: 1px solid black; */
+}
+
+.gallery-wrap .header-navbar div p:hover {
+  background-color: aliceblue;
+}
+
+.gallery-wrap>div:last-child {
+  /* border:1px solid red; */
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.gallery-wrap div:last-child p {
+  text-align: center;
+}
+
+.gallery-wrap .galleryimg-wrapper {
+  margin: auto;
+  width: 100%;
+  margin-left: 0;
+}
+
+.gallery-wrap .gallery-innerwrap {
+  display: flex;
+  gap: .3rem;
+  width: 90%;
+  margin: auto;
+  overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;  padding: 0.5rem .5rem;
+}
+
+.gallery-wrap .gallery-innerwrap div {
+  width: 10rem;
+  height: 10rem;
+  transition: box-shadow 0.3s ease-in-out;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.gallery-wrap .gallery-innerwrap div img {
+  width: 10rem;
+  height: 10rem;
+  padding: 0;
+  cursor: pointer;
+
+
+
+}
+
+.gallery-wrap .gallery-innerwrap div:hover {
+  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.2);
+  border:3px solid black;
+}
+
+.gallery-wrap .gallery-innerwrap div img:hover {}
+
+
+
+
+@media only screen and (max-width:900px) {
+  .gallery-wrap {
+    margin-top: 3rem;
+    /* border:3px solid red; */
+  }
+
+
+  .gallery-wrap .header-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0rem;
+    flex-wrap: wrap;
+    margin: auto;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+
+    /* border-bottom: 1px solid rgb(233, 233, 233); */
+  }
+
+
+  .gallery-wrap .header-navbar div {}
+
+  .gallery-wrap .header-navbar div p {
+    text-transform: uppercase;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.1rem 1rem;
+    cursor: pointer;
+
+    /* border: 1px solid black; */
+  }
+
+  .gallery-wrap .header-navbar div p:last-child {
+    text-align: center;
+  }
+
+  .gallery-wrap .header-navbar div p:hover {
+    background-color: aliceblue;
+  }
+
+
+
+  .gallery-wrap .galleryimg-wrapper {
+    margin: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .gallery-wrap .gallery-innerwrap {
+    display: flex;
+    gap: .3rem;
+    width: 95%;
+    margin: auto;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;  padding: 0.5rem .5rem;
+  }
+  
+  .gallery-wrap .gallery-innerwrap div {
+    width: 10rem;
+    height: 10rem;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 1rem;
+    position: relative;
+  }
+  
+  .gallery-wrap .gallery-innerwrap div img {
+    width: 10rem;
+    height: 10rem;
+    padding: 0;
+    cursor: pointer;
+  
+  
+  
+  }
+  
+  .gallery-wrap .gallery-innerwrap div:hover {
+    box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.2);
+    border:3px solid black;
+  }
+  
+  .gallery-wrap .gallery-innerwrap div img:hover {}
+  
+
+ 
+}

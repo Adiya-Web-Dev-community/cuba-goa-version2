@@ -1,0 +1,46 @@
+.slider1 {
+    position: relative;
+    /* width: 70%; */
+    width: 95%;
+    /* height: 30rem; */
+    height: 35rem;
+    /* margin: auto; */
+    margin: auto;
+    margin-top: -5px;
+    border-radius: 0;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.slider1 img {
+    position: absolute;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slider1 img.active {
+    z-index: 1;
+    opacity: 1;
+}
+
+
+@media only screen and (max-width:900px) {
+    .slider1 {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        margin: auto;
+    }
+}

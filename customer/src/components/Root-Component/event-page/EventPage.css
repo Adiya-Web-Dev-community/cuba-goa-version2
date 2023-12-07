@@ -1,0 +1,607 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.event-wrap {
+    padding-top: 8rem;
+    margin-bottom: 3rem;
+}
+
+.event-wrap .outerwrap:nth-child(odd) {
+    border: 1px solid black;
+    height: 36rem;
+    padding: 0;
+    margin-top: 2rem;
+    width: 90%;
+    margin-left: 9.5rem;
+}
+
+.event-wrap .outerwrap:nth-child(even) {
+    border: 1px solid black;
+    height: 36rem;
+    padding: 0;
+    margin-top: 2rem;
+    width: 90%;
+    margin-right: 5rem;
+}
+
+.event-wrap .outerwrap .innerwrap {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.event-wrap .outerwrap:nth-child(odd) .innerwrap .wrap {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-right: 0;
+}
+
+.event-wrap .outerwrap:nth-child(even) .innerwrap .wrap {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.event-wrap h1 {
+    font-size: 5.25vmin;
+    text-align: center;
+    color: white;
+}
+
+.event-wrap p {
+    font-size: max(10pt, 2.5vmin);
+    line-height: 1.4;
+    color: #0e390e;
+    margin-bottom: 1.5rem;
+}
+
+.event-wrap .wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 85vmin;
+    height: 25em;
+    border: 8px solid;
+    border-image: linear-gradient(-50deg, lightblue, lightblue, #011031, #011031) 1;
+    margin: 2rem auto;
+    transition: .3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.event-wrap .overlay {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem .75rem;
+    background: #011031;
+    transition: .4s ease-in-out;
+    z-index: 1;
+}
+
+.event-wrap .overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15vmin;
+    height: 100%;
+    padding: .5rem 0 0 .5rem;
+    border: 3px solid;
+    border-image:
+        linear-gradient(to bottom,
+            #B1A5FD 5%,
+            #B1A5FD 35% 65%,
+            #B1A5FD 95%) 0 0 0 100%;
+    transition: .3s ease-in-out .2s;
+    z-index: 1;
+}
+
+.event-wrap .content {
+    margin-top: 8rem;
+}
+
+.event-wrap .content p {
+    color: white;
+}
+
+.event-wrap .image-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vmin;
+    height: 100%;
+    background-image: url("https://assets.codepen.io/4787486/trees.png");
+    background-size: cover;
+    transition: .3s ease-in-out;
+    /* border: 1px solid green; */
+}
+
+.event-wrap .dots {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 55px;
+    height: 4vmin;
+    transition: .3s ease-in-out .3s;
+}
+
+.event-wrap .dot {
+    width: 14px;
+    height: 14px;
+    background: rgb(103, 158, 213);
+    border: 1px solid indigo;
+    border-radius: 50%;
+    transition: .3s ease-in-out .3s;
+}
+
+.event-wrap .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vmin;
+    height: 100%;
+    padding: 3vmin 4vmin;
+    background: #fff;
+    box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / .4);
+    overflow-y: scroll;
+}
+
+.event-wrap .wrap:hover .overlay {
+    transform: translateX(-60vmin);
+}
+
+.event-wrap .wrap:hover .image-content {
+    width: 30vmin;
+}
+
+.event-wrap .wrap:hover .overlay-content {
+    border: none;
+    transition-delay: .2s;
+    transform: translateX(60vmin);
+}
+
+.event-wrap .wrap:hover .dots {
+    transform: translateX(1rem);
+}
+
+.wrap:hover .dots .dot {
+    background: white;
+}
+
+
+/* Animations and timing delays */
+.event-wrap .animate {
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+    animation-fill-mode: backwards;
+}
+
+/* Pop In */
+.event-wrap .pop {
+    animation-name: pop;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+/* Slide In */
+.event-wrap .slide {
+    animation-name: slide;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translate(4em, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Slide Left */
+.event-wrap .slide-left {
+    animation-name: slide-left;
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translate(-40px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.event-wrap .slide-up {
+    animation-name: slide-up;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(3em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-wrap .delay-1 {
+    animation-delay: 0.3s;
+}
+
+.event-wrap .delay-2 {
+    animation-delay: 0.6s;
+}
+
+.event-wrap .delay-3 {
+    animation-delay: 0.9s;
+}
+
+.event-wrap .delay-4 {
+    animation-delay: 1.2s;
+}
+
+.event-wrap .delay-5 {
+    animation-delay: 1.5s;
+}
+
+.event-wrap .delay-6 {
+    animation-delay: 1.8s;
+}
+
+.delay-7 {
+    animation-delay: 2.1s;
+}
+
+.event-wrap .delay-8 {
+    animation-delay: 2.4s;
+}
+
+.eventcontactwrap {
+    width: 30%;
+    margin: auto;
+}
+
+.eventcontactwrap .eventcontactbtn {
+    width: 100%;
+}
+
+.eventcontactwrap .eventcontactbtn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media only screen and (max-width:900px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .event-wrap {
+        margin-top: -3rem;
+        margin-bottom: 3rem;
+    }
+
+    .event-wrap .outerwrap:nth-child(odd) {
+        border: 1px solid black;
+        height: 33rem;
+        padding: 0;
+        width: 95%;
+        margin-left: 0rem;
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    .event-wrap .outerwrap:nth-child(even) {
+        border: 1px solid black;
+        height: 30rem;
+        padding: 0;
+        width: 95%;
+        margin-right: 0rem;
+        margin: auto;
+        margin-top: 2rem;
+
+    }
+
+    .event-wrap .outerwrap .innerwrap {
+        width: 100%;
+        height: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .event-wrap .outerwrap:nth-child(odd) .innerwrap .wrap {
+        width: 95%;
+        height: 100%;
+        margin: auto;
+    }
+
+    .event-wrap .outerwrap:nth-child(even) .innerwrap .wrap {
+        width: 95%;
+        height: 100%;
+        margin: auto;
+
+    }
+
+    .event-wrap h1 {
+        font-size: 5.25vmin;
+        text-align: center;
+        color: white;
+    }
+
+    .event-wrap p {
+        font-size: max(10pt, 2.5vmin);
+        line-height: 1.4;
+        color: #0e390e;
+        margin-bottom: 1.5rem;
+    }
+
+    .event-wrap .wrap {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 85vmin;
+        height: 25em;
+        border: 8px solid;
+        border-image: linear-gradient(-50deg, lightblue, lightblue, #011031, #011031) 1;
+        margin: 2rem auto;
+        transition: .3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .event-wrap .overlay {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 1rem .75rem;
+        background: #011031;
+        transition: .4s ease-in-out;
+        z-index: 1;
+    }
+
+    .event-wrap .overlay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15vmin;
+        height: 100%;
+        padding: .5rem 0 0 .5rem;
+        border: 3px solid;
+        border-image:
+            linear-gradient(to bottom,
+                #B1A5FD 5%,
+                #B1A5FD 35% 65%,
+                #B1A5FD 95%) 0 0 0 100%;
+        transition: .3s ease-in-out .2s;
+        z-index: 1;
+    }
+
+    .event-wrap .content {
+        margin-top: 8rem;
+    }
+
+    .event-wrap .content p {
+        color: white;
+    }
+
+    .event-wrap .image-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60vmin;
+        height: 100%;
+        background-image: url("https://assets.codepen.io/4787486/trees.png");
+        background-size: cover;
+        transition: .3s ease-in-out;
+        /* border: 1px solid green; */
+    }
+
+    .event-wrap .dots {
+        position: absolute;
+        bottom: 1rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 55px;
+        height: 4vmin;
+        transition: .3s ease-in-out .3s;
+    }
+
+    .event-wrap .dot {
+        width: 14px;
+        height: 14px;
+        background: rgb(103, 158, 213);
+        border: 1px solid indigo;
+        border-radius: 50%;
+        transition: .3s ease-in-out .3s;
+    }
+
+    .event-wrap .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60vmin;
+        height: 100%;
+        padding: 3vmin 4vmin;
+        background: #fff;
+        box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / .4);
+        overflow-y: scroll;
+    }
+
+    .event-wrap .wrap:hover .overlay {
+        transform: translateX(-60vmin);
+    }
+
+    .event-wrap .wrap:hover .image-content {
+        width: 30vmin;
+    }
+
+    .event-wrap .wrap:hover .overlay-content {
+        border: none;
+        transition-delay: .2s;
+        transform: translateX(0vmin);
+    }
+
+    .event-wrap .wrap:hover .dots {
+        transform: translateX(1rem);
+    }
+
+    .wrap:hover .dots .dot {
+        background: white;
+    }
+
+
+    /* Animations and timing delays */
+    .event-wrap .animate {
+        animation-duration: 0.7s;
+        animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+        animation-fill-mode: backwards;
+    }
+
+    /* Pop In */
+    .event-wrap .pop {
+        animation-name: pop;
+    }
+
+    @keyframes pop {
+        0% {
+            opacity: 0;
+            transform: scale(0.5, 0.5);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+
+    /* Slide In */
+    .event-wrap .slide {
+        animation-name: slide;
+    }
+
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translate(6em, 0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Slide Left */
+    .event-wrap .slide-left {
+        animation-name: slide-left;
+    }
+
+    @keyframes slide-left {
+        0% {
+            opacity: 0;
+            transform: translate(-20px, 0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    .event-wrap .slide-up {
+        animation-name: slide-up;
+    }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(3em);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .event-wrap .delay-1 {
+        animation-delay: 0.3s;
+    }
+
+    .event-wrap .delay-2 {
+        animation-delay: 0.6s;
+    }
+
+    .event-wrap .delay-3 {
+        animation-delay: 0.9s;
+    }
+
+    .event-wrap .delay-4 {
+        animation-delay: 1.2s;
+    }
+
+    .event-wrap .delay-5 {
+        animation-delay: 1.5s;
+    }
+
+    .event-wrap .delay-6 {
+        animation-delay: 1.8s;
+    }
+
+    .delay-7 {
+        animation-delay: 2.1s;
+    }
+
+    .event-wrap .delay-8 {
+        animation-delay: 2.4s;
+    }
+
+    .eventcontactwrap {
+        width: 70%;
+        margin: auto;
+    }
+
+    .eventcontactwrap .eventcontactbtn {
+        width: 100%;
+    }
+
+
+}
+
+/*  */
