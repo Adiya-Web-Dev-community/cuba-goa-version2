@@ -29,7 +29,7 @@ app.use(require("./router/about-us"));
 app.use(require("./router/contactus"));
 app.use(require("./router/restaurantBooking"));
 app.use(require("./router/wedding-enquiry"));
-
+app.use(require("./router/chat"));
 app.get("/", (req, res) => {
   try {
     res.send("Welome to Cuba Goa!");
