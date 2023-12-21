@@ -1,0 +1,70 @@
+.our-properties-banner-video {
+  width: 100%;
+  height: 45rem;
+  position: relative;
+  /* margin-top: 4.5rem; */
+}
+
+.our-properties-banner-video>video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.our-properties-banner-video>video {
+  object-fit: cover;
+}
+
+.our-properties-banner-video .text {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  font-family: 'Satisfy', cursive;
+}
+
+.our-properties-banner-video .text h1 {
+  font-size: 60px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.our-properties-banner-video .text h4 {
+  margin-top: 10px;
+  text-shadow: 2px 2px 2px black;
+}
+
+@media screen and (max-width: 900px) {
+  .our-properties-banner-video .text h4 {
+    line-height: 2rem;
+  }
+
+  @media only screen and (max-width:900px) {
+    .our-properties-banner-video {
+      width: 100%;
+      height: 25rem;
+      position: relative;
+    }
+
+    .our-properties-banner-video .text {
+      text-align: center;
+      position: absolute;
+      top: 25%;
+      left: 2%;
+      margin-top: 3rem;
+      width: 100%;
+    }
+
+    .our-properties-banner-video .text h1 {
+      font-size: 30px;
+    }
+
+    .our-properties-banner-video .text h4 {
+      font-size: 1rem;
+    }
+  }
+}

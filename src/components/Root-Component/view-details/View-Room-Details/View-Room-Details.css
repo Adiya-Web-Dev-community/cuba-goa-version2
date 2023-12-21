@@ -1,0 +1,320 @@
+.view-details-container {
+  position: relative;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  /* margin-top: 11rem; */
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.view-details-container .imgwrap {
+  width: 65%;
+  height: fit-content;
+  /* border: 1px solid black; */
+}
+
+.view-details-container .imgwrap .imgdiv {
+  width: 100%;
+  height: 30rem;
+}
+
+.view-details-container .imgwrap .imgdiv img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.view-details-container .imgwrap .imgscroll {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: scroll;
+  border: 1px solid rgb(233, 233, 233);
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+}
+
+.view-details-container .imgwrap .imgscroll::-webkit-scrollbar-track {
+}
+
+.view-details-container .imgwrap .imgscroll img {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.view-details-container .contentWrap {
+  width: 35%;
+  height: fit-content;
+  padding-left: 1.5rem;
+  /* border: 1px solid black; */
+}
+
+.view-details-container .contentWrap h3 {
+  margin-bottom: 1rem;
+}
+
+.view-details-container .contentWrap .row1 {
+  display: flex;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  margin-bottom: 0.5rem;
+}
+
+.view-details-container .contentWrap .row1 div {
+  width: 30%;
+  display: flex;
+}
+
+.view-details-container .contentWrap .row1 div .icon {
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.view-details-container .contentWrap .row1 div p:last-child {
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.view-details-container .contentWrap .row2 {
+  border-bottom: 1px solid rgb(241, 241, 241);
+  margin-bottom: 0.5rem;
+}
+
+.view-details-container .contentWrap .row2 div p span img {
+  width: 1rem;
+  opacity: 0.2rem;
+}
+
+.view-details-container .contentWrap .row3 {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  margin-bottom: 0.5rem;
+}
+
+.view-details-container .contentWrap .row3 .aminity {
+  width: 40%;
+  margin-top: 0.2rem;
+}
+
+.view-details-container .contentWrap .row3 .aminity span {
+  margin-left: 0.5rem;
+}
+
+.view-details-container .contentWrap .row4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.view-details-container .contentWrap .row4 .aminity {
+  width: 40%;
+  margin-top: 0.5rem;
+}
+
+.view-details-container .contentWrap .row4 .aminity .icon {
+  width: 0.7rem;
+  color: rgb(1, 53, 1);
+}
+
+.view-details-container .contentWrap .row4 .aminity span {
+  margin-left: 0.3rem;
+}
+
+/* review slider css */
+
+.review-outer-wrap {
+  width: 85%;
+  margin: auto;
+  /* border: 1px solid black; */
+}
+
+.review-outer-wrap .review-inner-wrap {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: scroll;
+}
+
+.review-outer-wrap .review-inner-wrap .review-card {
+  border: 1px solid rgb(205, 204, 204);
+  width: 25rem;
+  height: 5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.review-outer-wrap .review-inner-wrap .review-card .contentsection {
+  padding-top: 0.5rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 900px) {
+  .view-details-container {
+    position: relative;
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    /* margin-top: 6rem; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .view-details-container .imgwrap {
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid black; */
+  }
+
+  .view-details-container .imgwrap .imgdiv {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .view-details-container .imgwrap .imgdiv img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  .view-details-container .imgwrap .imgscroll {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow-x: scroll;
+    border: 1px solid rgb(233, 233, 233);
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .view-details-container .imgwrap .imgscroll::-webkit-scrollbar-track {
+  }
+
+  .view-details-container .imgwrap .imgscroll img {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  .view-details-container .contentWrap {
+    width: 100%;
+    height: fit-content;
+    padding-left: 1.5rem;
+    /* border: 1px solid black; */
+  }
+
+  .view-details-container .contentWrap h3.heading {
+    margin-top: 1rem;
+  }
+
+  .view-details-container .contentWrap .row1 {
+    display: flex;
+    border-bottom: 1px solid rgb(241, 241, 241);
+    margin-bottom: 0.5rem;
+  }
+
+  .view-details-container .contentWrap .row1 div {
+    width: 45%;
+    display: flex;
+  }
+
+  .view-details-container .contentWrap .row1 div .icon {
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
+  }
+
+  .view-details-container .contentWrap .row1 div p:last-child {
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+
+  .view-details-container .contentWrap .row2 {
+    border-bottom: 1px solid rgb(241, 241, 241);
+    margin-bottom: 0.5rem;
+  }
+
+  .view-details-container .contentWrap .row2 div p span img {
+    width: 1rem;
+    opacity: 0.2rem;
+  }
+
+  .view-details-container .contentWrap .row3 {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(241, 241, 241);
+    margin-bottom: 0.5rem;
+  }
+
+  .view-details-container .contentWrap .row3 .aminity {
+    width: 50%;
+    margin-top: 0.2rem;
+  }
+
+  .view-details-container .contentWrap .row3 .aminity span {
+    margin-left: 0.1rem;
+  }
+
+  .view-details-container .contentWrap .row4 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .view-details-container .contentWrap .row4 .aminity {
+    width: 50%;
+    margin-top: 0.5rem;
+  }
+
+  .view-details-container .contentWrap .row4 .aminity .icon {
+    width: 0.7rem;
+    color: rgb(1, 53, 1);
+  }
+
+  .view-details-container .contentWrap .row4 .aminity span {
+    margin-left: 0.3rem;
+  }
+
+  /* //review slider css responsive */
+  .review-outer-wrap {
+    width: 90%;
+    margin: auto;
+    border: 1px solid black;
+  }
+
+  .review-outer-wrap .review-inner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    height: 25rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow-y: auto;
+    border: 1px solid rgb(226, 225, 225);
+    padding: 0.5rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  .review-outer-wrap .review-inner-wrap .review-card {
+    border: 1px solid rgb(205, 204, 204);
+    width: 20rem;
+    height: 10rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .review-outer-wrap .review-inner-wrap .review-card section:last-child {
+    padding-top: 0.5rem;
+  }
+}

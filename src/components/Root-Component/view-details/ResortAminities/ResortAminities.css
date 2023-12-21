@@ -1,0 +1,116 @@
+.resort-aminities-container{
+    margin-top: 5rem;
+    /* border: 1px solid black; */
+    padding: 0px 115px;
+}
+
+.resort-aminities-container h4{
+    color: black;
+}
+
+.popular-facities{
+    margin-top: 30px;
+}
+
+.popular-facities h6{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.popular-facities ul{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: green;
+    flex-wrap: wrap;
+}
+
+.popular-facities ul li{
+}
+
+.popular-facities ul span{
+    margin-right: 10px;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.aminities-block{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.aminities-block div{
+    margin-top: 15px;
+}
+
+.aminities-block div section{
+    margin-top: 30px;
+}
+
+.aminities-block div h6{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.aminities-block div h6 span{
+    color: black;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.aminities-block div ul{
+    list-style: none;
+    color: black;
+    margin-top: 10px;
+}
+
+.aminities-block div ul li{
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.aminities-block div ul li span{
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+    .popular-facities ul li{
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .resort-aminities-container{
+      padding: 0px 0px;
+    }
+    .popular-facities ul{
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+    .popular-facities ul li{
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular-facities ul li{
+        width: 100%;
+    }
+    .aminities-block{
+        flex-direction: column;
+    }
+    .aminities-block div section{
+        margin-top: 0px;
+    }
+    .aminities-block div{
+        margin-top: 0px;
+    }
+    .aminities-block div h6{
+    }
+}
