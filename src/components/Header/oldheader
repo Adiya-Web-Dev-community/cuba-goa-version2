@@ -1,0 +1,482 @@
+<div
+      className={` ${
+        location.pathname === "/chat"
+          ? "header_none"
+          : `header ${isScroll && "header_background"}`
+      }`}
+    >
+      <div className="menu" onClick={() => handleOpenNavbar()}>
+        <FaAlignJustify className="sidebar_icon" />
+        <section className="appbar_col_1">
+          {/* Logo */}
+
+          <Link to={"/"}>
+            <img
+              src={cubaGoaLogo}
+              alt="cuba-goa-logo"
+              style={{ width: "6rem", height: "3rem" }}
+            />
+          </Link>
+        </section>
+      </div>
+      {/* Desktop Navbar */}
+      <div className="desktop_section">
+        {/* <div className="main_header"> */}
+        <section className="appbar_col_1">
+          <div className="appbar_section_1">
+            <Link to={"/"} className="nav_link nav_header_2">
+              <MdHome className="header_icon" />
+              Home
+            </Link>
+
+            <Link className="nav_link nav_header_2" to={"/spa"}>
+              <FaSpa className="header_icon" />
+              Spa
+            </Link>
+            <Link className="nav_link nav_header_2" to={"/gallery"}>
+              <RiGalleryFill className="header_icon" />
+              Gallery
+            </Link>
+          </div>
+          <div className="appbar_section_1">
+            <Link to={"/aboutus"} className="nav_link nav_header_2">
+              <MdSmsFailed className="header_icon" />
+              About Us
+            </Link>
+            {/* Contact Us */}
+            <Link to={"/contactus"} className="nav_link nav_header_2">
+              <RiContactsFill className="header_icon" />
+              Contact Us
+            </Link>
+            <div className="dropdown header_drop ">
+              <CgMenuRight className="header_icon" />
+              <div className="dropdown_content">
+                <button
+                  className="dropdown-toggle dropdown_nav"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {/* MENU */}
+                  Menu
+                </button>
+                <div className="dropdown-menu">
+                  {auth ? (
+                    <div>
+                      <p
+                        onClick={() => {
+                          localStorage.clear("token");
+                          handleCloseNavbar();
+                          navigate("/");
+                          toast.success("Logged out successfully");
+                        }}
+                      >
+                        Logout
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <Link
+                        to={"/signin"}
+                        // onClick={() => {
+                        //   navigate("/signin");
+                        //   handleCloseNavbar();
+                        // }}
+                      >
+                        Login
+                      </Link>
+                    </div>
+                  )}
+                  {auth ? (
+                    <Link
+                      to={"/my-booking"}
+                      // onClick={() => {
+                      //   navigate("/my-bookings");
+                      //   handleCloseNavbar();
+                      // }}
+                    >
+                      <p>my bookings</p>
+                    </Link>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={`appbar_col_2`}>
+          {/* Logo */}
+
+          <Link to={"/"}>
+            <img
+              src={cubaGoaLogo}
+              alt="cuba-goa-logo"
+              style={{ width: "6.8rem", height: "4.8rem" }}
+            />
+          </Link>
+        </section>
+
+        <section className="appbar_col-3">
+          <div className="appbar_section_3">
+            {/* "DESTINATION WEDDINGS" */}
+
+            <Link className="nav_link nav_header_3" to={"/destination-wedding"}>
+              <MdLocalFlorist className="header_icon" />
+              Destination Weddings
+            </Link>
+            {/* "OUR HOTELS" */}
+            {/*  */}
+            <div className="dropdown header_drop">
+              <MdHotel className="dropdown_icon" />
+              <div className="dropdown_content">
+                {/* <FaHotel /> */}
+                <button
+                  className="dropdown-toggle dropdown_nav"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {/* OUR HOTELS */}
+                  Our Hotels
+                </button>
+                {/* </div> */}
+                <div className="dropdown-menu">
+                  {allProperties
+                    .filter((resort) => {
+                      if (resort.type === "resort") {
+                        return resort;
+                      }
+                    })
+                    .map((property, index) => {
+                      return (
+                        <div key={property.id}>
+                          <p
+                            onClick={() => {
+                              viewRooms(property._id, property.resortName);
+                            }}
+                          >
+                            {property.resortName}
+                          </p>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="appbar_section_3">
+            {/* "OUR RESTAURANTS" */}
+            <div className="dropdown header_drop nav_header_3">
+              <SiIfood className="dropdown_icon" />
+              <div className="dropdown_content">
+                <button
+                  className="dropdown-toggle dropdown_nav"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {/* OUR RESTAURANTS */}
+                  Our Restaurants
+                </button>
+                <div className="dropdown-menu" style={{ width: "10rem" }}>
+                  {allProperties
+                    .filter((restaurant) => {
+                      if (restaurant.type === "restaurant") {
+                        return restaurant;
+                      }
+                    })
+                    .map((property, index) => {
+                      return (
+                        <div key={property.id}>
+                          <p
+                            onClick={() =>
+                              viewRooms(property._id, property.resortName)
+                            }
+                          >
+                            {property.resortName}
+                          </p>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            </div>
+            {/* "THINGS TO DO" */}
+            <div className="dropdown header_drop ">
+              <TbSubtask className="dropdown_icon" />
+              <div className="dropdown_content">
+                <button
+                  className="dropdown-toggle dropdown_nav"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {/* THINGS TO DO */}
+                  Things to Do
+                </button>
+                <div className="dropdown-menu" style={{ width: "10rem" }}>
+                  {thingstodo.map((activity, index) => {
+                    return (
+                      <div key={activity.id}>
+                        <p
+                          onClick={() => {
+                            navigate(`${activity.pagelink}`);
+                          }}
+                        >
+                          {activity.activity}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* </div> */}
+      </div>
+      {/* Second Navbar */}
+      {/* {isNavbarHidden && ( */}
+      {/*small screen navbar */}
+      <div className={`desktop_section_extra`}>
+        <section
+          className={`appbar_col_1_extra ${isNavbarHidden && "visible"}`}
+        >
+          {/* mobile view navbar */}
+          <div className="right-side-navbar">
+            <Box
+              className="col-2-box"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div className="sidebarCloseIcon">
+                <div className="close_cross">
+                  <Icon
+                    className="close-cross-icon"
+                    icon={cross}
+                    size={15}
+                    onClick={handleCloseNavbar}
+                  />
+                </div>
+                SideBar
+              </div>
+              <div className="sideButtons">
+                <Link to={"/"} className="side_link">
+                  <MdHome className="sidenav_icon" />
+                  Home
+                </Link>
+                {/* </Button> */}
+                <Link to={"/aboutus"} className="side_link">
+                  <MdSmsFailed className="sidenav_icon" />
+                  About Us
+                </Link>
+                <div className="drop_down">
+                  <MdHotel className="sidenav_icon" />
+                  <div className="side_drop_content">
+                    {/* <FaHotel /> */}
+                    <button
+                      className="dropdown-toggle dropdown_sidebar"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {/* OUR HOTELS */}
+                      Our Hotels
+                    </button>
+                    {/* </div> */}
+                    <div className="dropdown-menu">
+                      {allProperties
+                        .filter((resort) => {
+                          if (resort.type === "resort") {
+                            return resort;
+                          }
+                        })
+                        .map((property, index) => {
+                          return (
+                            <div key={property.id}>
+                              <p
+                                onClick={() => {
+                                  viewRooms(property._id, property.resortName);
+                                }}
+                              >
+                                {property.resortName}
+                              </p>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </div>
+                </div>
+                <Link className="side_link" to={"/destination-wedding"}>
+                  {/* DESTINATION WEDDINGS */}
+                  <MdLocalFlorist className="sidenav_icon" />
+                  Destination Weddings
+                </Link>
+                <Link to={"/events"} className="side_link">
+                  {/* CELEBRATE WITH US */}
+                  <MdCelebration className="sidenav_icon" />
+                  Celebrate With Us
+                </Link>
+                <div className="drop_down">
+                  <SiIfood className="sidenav_icon" />
+                  <div className="side_drop_content">
+                    <button
+                      className="dropdown-toggle dropdown_sidebar"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {/* OUR RESTAURANTS */}
+                      Our Restaurants
+                    </button>
+                    <div className="dropdown-menu">
+                      {allProperties
+                        .filter((restaurant) => {
+                          if (restaurant.type === "restaurant") {
+                            return restaurant;
+                          }
+                        })
+                        .map((property, index) => {
+                          return (
+                            <div key={property.id}>
+                              <p
+                                onClick={() => {
+                                  viewRooms(property._id, property.resortName);
+                                }}
+                              >
+                                {property.resortName}
+                              </p>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </div>
+                </div>
+                {/* things to do */}
+                <div className="drop_down">
+                  <TbSubtask className="sidenav_icon" />
+                  <div className="side_drop_content">
+                    <button
+                      className="dropdown-toggle dropdown_sidebar"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {/* THINGS TO DO */}
+                      Things to Do
+                    </button>
+                    <div className="dropdown-menu">
+                      {thingstodo.map((activity, index) => {
+                        return (
+                          <div key={activity.id}>
+                            <p
+                              onClick={() => {
+                                navigate(`${activity.pagelink}`);
+                                handleCloseNavbar();
+                              }}
+                            >
+                              {activity.activity}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <Link to={"/spa"} className="side_link">
+                  {/* SPA */}
+                  <FaSpa className="sidenav_icon" />
+                  Spa
+                </Link>
+                <Link to={"/gallery"} className="side_link">
+                  {/* GALLERY */}
+                  <RiGalleryFill className="sidenav_icon" />
+                  Gallery
+                </Link>
+                <Link to={"/contactus"} className="side_link">
+                  <RiContactsFill className="sidenav_icon" />
+                  Contact Us
+                </Link>
+                {/* instead of my bookings menu dropdown for other options */}
+                <div className="drop_down">
+                  <CgMenuRight className="sidenav_icon" />
+                  <div className="side_drop_content">
+                    <button
+                      className="dropdown-toggle dropdown_sidebar"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {/* MENU */}
+                      Menu
+                    </button>
+                    <div className="dropdown-menu">
+                      {auth ? (
+                        <div>
+                          <p
+                            onClick={() => {
+                              localStorage.clear("token");
+                              handleCloseNavbar();
+                              navigate("/");
+                              toast.success("Logged out successfully");
+                            }}
+                          >
+                            Logout
+                          </p>
+                        </div>
+                      ) : (
+                        <div>
+                          <Link
+                            to={"/signin"}
+                            // onClick={() => {
+                            //   navigate("/signin");
+                            //   handleCloseNavbar();
+                            // }}
+                          >
+                            Login
+                          </Link>
+                        </div>
+                      )}
+                      {auth ? (
+                        <Link
+                          to={"/my-booking"}
+                          // onClick={() => {
+                          //   navigate("/my-bookings");
+                          //   handleCloseNavbar();
+                          // }}
+                        >
+                          <p>my bookings</p>
+                        </Link>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* ends */}
+            </Box>
+          </div>
+
+          {/* mobile view navbar ends */}
+        </section>
+      </div>
+      {/* )} */}
+    </div>
