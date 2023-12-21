@@ -140,6 +140,7 @@ import React, { useEffect, useState } from "react";
 import "./Wedding.css";
 import axios from "../../../helpers/axios";
 import { useNavigate } from "react-router-dom";
+import ChatOpeningButton from "../Chat/ChatOpeningButton";
 
 const Wedding = () => {
   const navigate = useNavigate();
@@ -225,6 +226,7 @@ const Wedding = () => {
           </div>
         </div>
       </div>
+      <ChatOpeningButton />
     </>
   );
 };

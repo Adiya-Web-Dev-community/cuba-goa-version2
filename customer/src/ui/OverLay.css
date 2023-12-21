@@ -1,0 +1,37 @@
+.overlay_parent {
+  /* height: 100vh;
+  width: 100vh; */
+
+  display: none;
+}
+
+.overlay_visible {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: transparent; */
+  backdrop-filter: blur(8px);
+}
+
+/* @media only screen and (max-width: 780px) {
+  .visible {
+    height: 100vh;
+    width: 100vw;
+    transition: transform 0.9s ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .overlay_parent {
+    transform: translateY(100%); 
+
+    transition: transform 0.9s ease-in-out; 
+  }
+
+  .visible {
+    transform: translateY(12%);
+  }
+} */

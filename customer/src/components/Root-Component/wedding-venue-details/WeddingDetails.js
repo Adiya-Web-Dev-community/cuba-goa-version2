@@ -10,6 +10,7 @@ import { BsCircleFill } from "react-icons/bs";
 import { AiOutlineUngroup } from "react-icons/ai";
 import EnquiryForm from "./EnquiryForm";
 import Footer from "../Footer/Footer";
+import ChatOpeningButton from "../Chat/ChatOpeningButton";
 
 const ViewDetails = () => {
   const navigate = useNavigate();
@@ -107,6 +108,8 @@ const ViewDetails = () => {
       </div>
 
       <EnquiryForm />
+
+      <ChatOpeningButton />
       <Footer />
     </>
   );

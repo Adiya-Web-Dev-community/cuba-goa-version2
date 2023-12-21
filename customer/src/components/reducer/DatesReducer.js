@@ -1,43 +1,48 @@
 const intitalData = {
-    checkIn: null,
-    checkOut: null,
-    dataObj: null,
-    totalAmount: null
-}
-
+  checkIn: null,
+  checkOut: null,
+  dataObj: null,
+  totalAmount: null,
+  userdetail: [],
+};
 
 const DatesReducer = (state = intitalData, action) => {
-    switch (action.type) {
-        case 'set_checkin':
-            return {
-                ...state,
-                checkIn: action.payload.checkindate
-            };
+  console.log(action.payloade);
+  switch (action.type) {
+    case "set_checkin":
+      return {
+        ...state,
+        checkIn: action.payload.checkindate,
+      };
 
-        case 'set_checkout':
-            return {
-                ...state,
-                checkOut: action.payload.checkoutdate
-            };
+    case "set_checkout":
+      return {
+        ...state,
+        checkOut: action.payload.checkoutdate,
+      };
 
+    case "setbookingcart":
+      return {
+        ...state,
+        dataobj: action.payload.dataobj,
+      };
 
-        case 'setbookingcart':
-            return {
-                ...state,
-                dataobj: action.payload.dataobj
-            };
+    case "setTotalAmount":
+      return {
+        ...state,
+        setTotalAmount: action.payload.setTotalAmount,
+      };
 
-        case 'setTotalAmount':
-            return {
-                ...state,
-                setTotalAmount: action.payload.setTotalAmount
-            };
+    case "userDetails":
+      return {
+        ...state,
+        userdetail: [...state.userdetail, action.payloade],
+      };
 
-        default: {
-            return state
-        }
+    default: {
+      return state;
     }
-}
+  }
+};
 
-
-export default DatesReducer
+export default DatesReducer;

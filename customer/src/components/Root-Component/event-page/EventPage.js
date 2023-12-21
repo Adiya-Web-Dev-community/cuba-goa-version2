@@ -5,6 +5,7 @@ import { location2 } from "react-icons-kit/icomoon/location2";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import EnquiryForm from "../wedding-venue-details/EnquiryForm";
+import ChatOpeningButton from "../Chat/ChatOpeningButton";
 
 const EventPage = () => {
   const navigate = useNavigate();
@@ -195,7 +196,7 @@ const EventPage = () => {
           </section>
         </div>
       </div>
-
+      <ChatOpeningButton />
       <Footer />
     </>
   );

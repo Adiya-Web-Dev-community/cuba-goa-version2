@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../../helpers/axios";
-import './PostSpaData.css'
+import "./PostSpaData.css";
 
 function PostForm() {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ function PostForm() {
     imgUrl: "",
   });
   const [image, setImage] = useState("");
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem("user");
 
   //handle inputs
   const handleInputs = (e) => {
@@ -24,8 +24,8 @@ function PostForm() {
     await axios
       .post("/addspa", form, {
         headers: {
-          authorization: token
-        }
+          authorization: token.authorization,
+        },
       })
       .then((resp) => {
         console.log(resp);
@@ -47,7 +47,8 @@ function PostForm() {
     const imgData = new FormData();
     imgData.append("file", image);
     imgData.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET);
-    await axios.post(process.env.REACT_APP_CLOUDINARY_URL, imgData)
+    await axios
+      .post(process.env.REACT_APP_CLOUDINARY_URL, imgData)
       .then((resp) => {
         console.log(resp.data.url);
         setForm({ ...form, imgUrl: resp.data.url });
@@ -59,10 +60,7 @@ function PostForm() {
 
   return (
     <div id="UserFormWrapper">
-      <div
-        id="formWrapper"
-       
-      >
+      <div id="formWrapper">
         <h4
           style={{ textAlign: "center", marginBottom: "1.5rem", color: "#888" }}
         >
@@ -85,7 +83,7 @@ function PostForm() {
                 justifyContent: "center",
                 height: "130px",
                 cursor: "pointer",
-                width:'130px'
+                width: "130px",
               }}
             >
               {image ? (
@@ -95,7 +93,7 @@ function PostForm() {
                   alt="preview"
                 />
               ) : (
-                <span style={{ fontSize: "1.2rem" }}>Choose  image</span>
+                <span style={{ fontSize: "1.2rem" }}>Choose image</span>
               )}
             </label>
             <input
@@ -125,38 +123,28 @@ function PostForm() {
             value={form.name}
             onChange={handleInputs}
             id="firstinput"
-            
           />
         </div>
-        <div style={{ marginTop: "1.5rem" }} id='details'>
+        <div style={{ marginTop: "1.5rem" }} id="details">
           <textarea
             type="text"
             placeholder="SPA Details"
             name="details"
             value={form.details}
             onChange={handleInputs}
-            
-          
           />
         </div>
-        <div style={{ marginTop: "1.5rem" }} id='details'>
+        <div style={{ marginTop: "1.5rem" }} id="details">
           <textarea
             type="text"
             placeholder="SPA Benefits"
             name="benefits"
             value={form.benefits}
             onChange={handleInputs}
-        
           />
-        </div> 
-        <div
-          id="button"
-         
-        >
-          <button
-            className="btn btn-warning"
-            onClick={uploadImage}
-          >
+        </div>
+        <div id="button">
+          <button className="btn btn-warning" onClick={uploadImage}>
             SUBMIT
           </button>
         </div>

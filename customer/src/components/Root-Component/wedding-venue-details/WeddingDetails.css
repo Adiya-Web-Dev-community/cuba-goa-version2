@@ -63,6 +63,7 @@
 .weddingenquiry-form-wrap .enquiry-form .form-group {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .weddingenquiry-form-wrap .enquiry-form .form-group label {
@@ -115,7 +116,9 @@
   padding-right: 0.5rem;
 }
 .weddingenquiry-form-wrap .enquiry-form .form-group textarea {
-  min-width: 60rem;
+  /* min-width: 60rem; */
+
+  min-width: 100%;
   max-width: 60rem;
   min-height: 10rem;
   max-height: 10rem;

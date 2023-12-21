@@ -20,7 +20,7 @@ import Home from "./components/Root-Component/Home/Home";
 //dates reducer , taking dates from home page
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import DatesReducer from "./components/reducer/DatesReducer";
+
 import OurProperties from "./components/Root-Component/OurProperties/OurProperties";
 import ContactUs from "./components/Root-Component/Contact/ContactUs";
 import SignIn from "./components/Root-Component/signin/Signin";
@@ -32,63 +32,68 @@ import Activity from "./components/Root-Component/things-to-do/Activity";
 import Wedding from "./components/Root-Component/destination-wedding/Wedding";
 import { Toaster } from "react-hot-toast";
 import RoomTable from "./components/Root-Component/view-details/RoomTable-With-Aminities/RoomTable";
+import ChatArea from "./components/Root-Component/Chat/ChatArea";
+import Layout from "./ui/Layout";
+import { store } from "./components/reducer/store";
 
 function App() {
-  const store = createStore(DatesReducer);
-
-  const [auth, setAuth] = useState("");
   return (
+    // <ChatArea />
     <Provider store={store}>
       <div style={{ position: "relative" }}>
         <Toaster position="top-center" reverseOrder={false} />
 
-        <Header auth={auth} setAuth={setAuth} />
-
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<SignIn />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route
-            path="/:resortId/:roomType/:roomId/details"
-            element={<ViewRoomDetails />}
-          />
-          <Route path="/rating-form/:resortId" element={<RatingForm />}>
-            {" "}
-          </Route>
-          <Route path="/my-bookings" element={<MyBookings />}>
-            {" "}
-          </Route>
-          <Route path="/aboutus" element={<About />}></Route>
-          <Route
-            path="/booking-summary/:resortname/:id"
-            element={<BookingPage />}
-          ></Route>
-          <Route path="/gallery" element={<Gallary />}></Route>
-          <Route path="/events" element={<EventPage />}></Route>
-          <Route path="/spa" element={<Spa />}></Route>
-          <Route path="/our-properties" element={<OurProperties />}></Route>
-          <Route
-            path="/:resortname/:id/rooms"
-            element={<ViewDetails />}
-          ></Route>
-          <Route
-            path="/:resortname/:id/rooms-table"
-            element={<RoomTable />}
-          ></Route>
-          <Route path="/spa-details/:spaId" element={<SpaDetails />}></Route>
-          <Route path="/contactus" element={<ContactUs />}></Route>
-          <Route path="/terms-conditions" element={<TermsConditions />}></Route>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route
+              path="/:resortId/:roomType/:roomId/details"
+              element={<ViewRoomDetails />}
+            />
+            <Route path="/rating-form/:resortId" element={<RatingForm />}>
+              {" "}
+            </Route>
+            <Route path="/my-bookings" element={<MyBookings />}>
+              {" "}
+            </Route>
+            <Route path="/aboutus" element={<About />}></Route>
+            <Route
+              path="/booking-summary/:resortname/:id"
+              element={<BookingPage />}
+            ></Route>
+            <Route path="/gallery" element={<Gallary />}></Route>
+            <Route path="/events" element={<EventPage />}></Route>
+            <Route path="/spa" element={<Spa />}></Route>
+            <Route path="/our-properties" element={<OurProperties />}></Route>
+            <Route
+              path="/:resortname/:id/rooms"
+              element={<ViewDetails />}
+            ></Route>
+            <Route
+              path="/:resortname/:id/rooms-table"
+              element={<RoomTable />}
+            ></Route>
+            <Route path="/spa-details/:spaId" element={<SpaDetails />}></Route>
+            <Route path="/contactus" element={<ContactUs />}></Route>
+            <Route
+              path="/terms-conditions"
+              element={<TermsConditions />}
+            ></Route>
 
-          {/* things to do */}
-          <Route path="/north-goa" element={<NorthGoa />}></Route>
-          <Route path="/south-goa" element={<SouthGoa />}></Route>
-          <Route path="/activity" element={<Activity />}></Route>
-          <Route path="/activity" element={<Activity />}></Route>
-          <Route path="/destination-wedding" element={<Wedding />}></Route>
-          <Route
-            path="/wedding-venue-details/:resortID/:resortName"
-            element={<WeddingDetails />}
-          ></Route>
+            {/* things to do */}
+            <Route path="/north-goa" element={<NorthGoa />}></Route>
+            <Route path="/south-goa" element={<SouthGoa />}></Route>
+            <Route path="/activity" element={<Activity />}></Route>
+            <Route path="/activity" element={<Activity />}></Route>
+            <Route path="/destination-wedding" element={<Wedding />}></Route>
+            <Route
+              path="/wedding-venue-details/:resortID/:resortName"
+              element={<WeddingDetails />}
+            ></Route>
+            <Route path="/chat" element={<ChatArea />}></Route>
+          </Route>
         </Routes>
       </div>
     </Provider>

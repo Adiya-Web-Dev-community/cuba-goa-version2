@@ -14,6 +14,7 @@ import { MdBalcony } from "react-icons/md";
 import { IoMdFlower } from "react-icons/io";
 import { TbMassage } from "react-icons/tb";
 import { MdOutlineSportsTennis } from "react-icons/md";
+import ChatOpeningButton from "../../Chat/ChatOpeningButton";
 
 const ViewRoomDetails = () => {
   useEffect(() => {
@@ -240,7 +241,7 @@ const ViewRoomDetails = () => {
           </div>
         </div>
       </div>
-
+      <ChatOpeningButton />
       <Footer />
     </>
   );

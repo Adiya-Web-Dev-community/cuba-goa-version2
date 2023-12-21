@@ -1,0 +1,229 @@
+.app-bar {
+  width: 100%;
+  height: 7.5rem;
+  z-index: 100 !important;
+  /* border: 1px solid black; */
+  margin: auto;
+  position: fixed;
+  top: 0%;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+/* desktop navbar */
+
+.app-bar .desktop-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.app-bar .desktop-section .appbar-col-1 {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-bar .desktop-section .appbar-col-1 .r-image {
+  width: 16rem;
+  height: 7rem;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/* .app-bar .desktop-section .appbar-col-1 .r-image > img {
+  /* border: 1px solid black; */
+/* width: 100%;
+  height: 100%; */
+/* }  */
+
+.close-cross-icon {
+  cursor: pointer;
+}
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box {
+  /* border:1px solid black; */
+  height: 100%;
+  display: flex;
+}
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item {
+  /* border:1px solid black; */
+  height: 2rem;
+  margin: auto;
+  margin-inline-end: 1rem;
+  /* color: white; */
+  /* color: white; */
+  font-size: 0.7rem;
+  font-family: "sans-serif";
+}
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:hover {
+  background-color: rgb(103, 186, 212);
+  outline: none;
+  border: none;
+  color: black;
+}
+
+.app-bar .desktop-section .appbar-col-2 .menu {
+  display: none;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.app-bar .desktop-section .appbar-col-2 .dropdown button {
+  background-color: transparent;
+  border: 0;
+  margin-top: 2.6rem;
+  margin-right: 0.5rem;
+  /* color: white; */
+  /* font-size: 0.7rem; */
+  font-family: sans-serif;
+}
+
+.app-bar .desktop-section .appbar-col-2 .dropdown .dropdown-menu div {
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+
+.app-bar .desktop-section .appbar-col-2 .dropdown .dropdown-menu div p {
+  text-transform: capitalize;
+}
+
+.app-bar .desktop-section .appbar-col-2 .dropdownmenus .dropdown-menu {
+  /* background-color: red; */
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.app-bar .desktop-section .appbar-col-2 .dropdownmenus .dropdown-menu div p {
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 900px) {
+  .app-bar {
+    width: 100%;
+    z-index: 10;
+    /* border: 1px solid black; */
+    margin: auto;
+    position: fixed;
+    padding: 1rem 0rem;
+    height: 5rem;
+  }
+
+  /* desktop navbar */
+
+  .app-bar .desktop-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .app-bar .desktop-section .appbar-col-1 .r-image {
+    width: 17rem;
+    height: 7rem;
+    margin-left: 0;
+    margin-top: 0;
+    display: none;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .menu {
+    display: block;
+    visibility: visible;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 {
+    display: flex;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box {
+    /* border:1px solid black; */
+    display: none;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito Sans", Arial, sans-serif;
+    /* border: 1px solid black; */
+    font-weight: 600;
+    font-size: 2rem;
+    opacity: 0.5;
+    margin-right: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item {
+    /* border:1px solid black; */
+    height: 2rem;
+    margin: auto;
+    margin-inline-end: 1rem;
+    color: white;
+    font-size: 1.1rem;
+    font-family: "Nunito Sans", Arial, sans-serif;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:hover {
+    /* background-color: rgb(200, 241, 200); */
+    outline: none;
+    border: none;
+  }
+
+  /* mobile view navbar */
+
+  .app-bar .right-side-navbar {
+    background-color: rgba(0, 53, 128, 255);
+    width: 75%;
+    height: 50rem;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    padding-right: 2rem;
+    box-shadow: 5px 5px 1000px 5px black;
+  }
+
+  .app-bar .right-side-navbar .col-2-box {
+    padding: 0.5rem 0rem;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .btn-item {
+    /* border:1px solid black; */
+    width: fit-content;
+    /* color: rgb(217, 237, 245); */
+    /* border-bottom: 0.1px solid rgb(217, 237, 245); */
+    display: block;
+    align-self: flex-end;
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .dropdown button {
+    float: right;
+    margin-top: 0.5rem;
+    font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+    opacity: 0.9;
+    /* color: white; */
+    font-size: 1rem;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .dropdown div {
+    padding-left: 0.5rem;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .dropdown div p {
+    text-transform: capitalize;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .dropdownmenus .dropdown-menu {
+    /* background-color: red; */
+    padding-left: 1rem;
+  }
+
+  .app-bar .right-side-navbar .col-2-box .dropdownmenus .dropdown-menu div p {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+}

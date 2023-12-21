@@ -1,7 +1,7 @@
 .view-details-wrapper {
   /* border: 1px solid black; */
   padding-bottom: 2rem;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .view-details-wrapper .resort-name h2 {
@@ -302,9 +302,9 @@
   }
 
   .view-details-wrapper .resort-name h2 {
-    font-family: "Geomanist";
+    /* font-family: "Geomanist"; */
     text-align: center;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     /* border:1px solid black; */
   }
 

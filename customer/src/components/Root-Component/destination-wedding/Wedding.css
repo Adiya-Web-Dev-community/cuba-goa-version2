@@ -585,7 +585,7 @@ Slide Left .wedding-event-wrap .slide-left {
 
 .wedding-wrap {
   width: 100%;
-  margin-top: 7rem;
+  /* margin-top: 7rem; */
   margin-bottom: 3rem;
 }
 
@@ -628,6 +628,7 @@ Slide Left .wedding-event-wrap .slide-left {
   justify-content: center;
   gap: 3rem;
   margin-top: 2rem;
+  padding: 1rem;
 }
 .wedding-wrap .venue-wrap .wrapper .venuecard {
   width: 30%;
@@ -662,7 +663,7 @@ Slide Left .wedding-event-wrap .slide-left {
 @media only screen and (max-width: 680px) {
   .wedding-wrap {
     width: 100%;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     margin-bottom: 3rem;
   }
 

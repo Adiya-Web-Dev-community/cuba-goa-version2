@@ -1,52 +1,49 @@
-import { useState } from "react"
-import axios from "../../../helpers/axios"
-import "./view-bookings.css"
+import { useState } from "react";
+import axios from "../../../helpers/axios";
+import "./view-bookings.css";
 import Header from "../../Header/Header";
 import { useNavigate, useParams } from "react-router";
 import Footer from "../Footer/Footer";
 import BookingList from "./bookingList";
 import PreLoader from "../../Preloader-Component/Preloader-Component";
 
-
 const ViewBooking = () => {
-    const [filterCriteria, setFilterCriteria] = useState();
-    const [filterInput, setFilterInput] = useState();
-    const navigate = useNavigate();
-    const [details, setDetails] = useState([])
-    const [bookingList, setBookingList] = useState()
-    const token = localStorage.getItem('token')
-    const fetchBookingList = async () => {
-        await axios.get("/get-all-bookings", {
-            headers: {
-                authorization: token
-            }
-        })
-            .then((res) => {
-                console.log(res.data.data)
-                setBookingList(res.data.data.reverse())
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+  const [filterCriteria, setFilterCriteria] = useState();
+  const [filterInput, setFilterInput] = useState();
+  const navigate = useNavigate();
+  const [details, setDetails] = useState([]);
+  const [bookingList, setBookingList] = useState();
+  const token = localStorage.getItem("user");
+  const fetchBookingList = async () => {
+    await axios
+      .get("/get-all-bookings", {
+        headers: {
+          authorization: token.authorization,
+        },
+      })
+      .then((res) => {
+        console.log(res.data.data);
+        setBookingList(res.data.data.reverse());
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    useState(() => {
-        fetchBookingList()
-    }, [bookingList])
+  useState(() => {
+    fetchBookingList();
+  }, [bookingList]);
 
-    if (!bookingList) {
-        return (
-            <PreLoader />
-        )
-    }
+  if (!bookingList) {
+    return <PreLoader />;
+  }
 
-    // console.log("Booking List => ", bookingList)
-    return (
-        <>
-            <Header />
-            <div className="booking-list-container">
-
-                {/* <div>
+  // console.log("Booking List => ", bookingList)
+  return (
+    <>
+      <Header />
+      <div className="booking-list-container">
+        {/* <div>
                     <section className="booking-list-filter-bar">
                         <label htmlFor="booking-list-select-tag">Filter By</label>
                         <select id="booking-list-select-tag" onChange={(e) => {setFilterCriteria(e.target.value); searchFilter(e.target.value)} }>
@@ -63,16 +60,18 @@ const ViewBooking = () => {
                         <input onChange={(e) => handleInputFilter(e)}/>
                     </section>
                 </div> */}
-                <BookingList bookingList={bookingList} setBookingList={setBookingList} />
-            </div>
-            <div style={{ marginTop: "10rem" }}>
-                <Footer />
-            </div>
-            {/* {console.log(filterCriteria)} */}
-            {/* {console.log(filterInput)} */}
-        </>
-    )
-
-}
+        <BookingList
+          bookingList={bookingList}
+          setBookingList={setBookingList}
+        />
+      </div>
+      <div style={{ marginTop: "10rem" }}>
+        <Footer />
+      </div>
+      {/* {console.log(filterCriteria)} */}
+      {/* {console.log(filterInput)} */}
+    </>
+  );
+};
 
 export default ViewBooking;

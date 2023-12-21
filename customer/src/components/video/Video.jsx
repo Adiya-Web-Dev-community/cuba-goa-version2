@@ -1,196 +1,248 @@
-import React, { useState, useEffect } from 'react'
-import beachResort from "../../assets/resort.mp4"
-import "../../styles/main.css"
-import { useNavigate } from 'react-router'
-import axios from '../../helpers/axios'
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-hot-toast'
-import homeVideo from '../../assets/HomeVideo.mp4'
+/* eslint-disable no-lone-blocks */
+import React, { useState, useEffect } from "react";
+import beachResort from "../../assets/resort.mp4";
+import "../../styles/main.css";
+import { useNavigate } from "react-router";
+import axios from "../../helpers/axios";
+import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
+// import homeVideo from "../../assets/HomeVideo.mp4";
+// import homeVideo from "../../assets/homeVideo2.mp4";
+import homeVideo from "../../assets/home_3.mp4";
 
-const Video = () => {
+//image
+import resortImage from "../../assets/palolemImg.png";
+import { Button } from "@mui/material";
 
-  const navigate = useNavigate()
-  const [resortData, setResortData] = useState()
-  const [resortId, setResortId] = useState('')
+const Video = ({ issearchBox }) => {
+  const navigate = useNavigate();
 
   //reducer dispatch
-  const dispatch = useDispatch()
-  const [checkindate, setCheckindate] = useState('')
-  const [checkoutdate, setCheckoutdate] = useState('')
-
+  const dispatch = useDispatch();
 
   //SHOW ROOMS
-  const viewRooms = (id, resortname) => {
-    navigate(`/${resortname}/${id}/rooms`)
-    console.log(resortname, id)
-  }
 
-  const [allProperties, setAllProperties] = useState([])
-  const getPropertiesData = async () => {
-    await axios.get(`/hotelbook`)
-      // await axios(`http://localhost:4001/hotelbook`)
-      .then((res) => {
-        // console.log(res.data)
-        setAllProperties(res.data)
-        //    setSelectedVal([res.data[0].resortName, res.data[0]._id])
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-  console.log("allProperties =>", allProperties)
+  // console.log("allProperties =>", allProperties);
 
-  useEffect(() => {
-    getPropertiesData()
-  }, [])
+  ///resizing know window width for display second calender
 
-
-  useEffect(() => {
-    if (resortId === "") {
-      console.log('empty reosrt id')
-    }
-    else {
-      const resortData = allProperties.find((el) => el._id === resortId)
-      setResortData(resortData)
-      console.log(resortData)
-    }
-    // eslint-disable-next-line
-  }, [resortId])
-
+  // console.log(isScreenSmall);
 
   // Handle Check Available
-  const handleCheckAvailable = () => {
-    if (resortId === "") {
-      toast.error('Choose resort to check availability')
-    }
-    else {
-      console.log('resortdata', resortData)
-
-      if (checkindate !== "" && checkoutdate !== "") {
-        dispatch({ type: 'set_checkin', payload: { checkindate: checkindate } });
-        dispatch({ type: 'set_checkout', payload: { checkoutdate: checkoutdate } })
-        viewRooms(resortData._id, resortData.resortName)
-      }
-      else {
-        toast.error('Select dates to check availability')
-      }
-    }
-  }
 
   return (
-    <div className='main' >
-      < video src={homeVideo} autoPlay loop muted data-aos="flip-left" data-aos-delay="600" data-aos-easing="ease-in-out" />
-      {/* <div className='home-text' data-aos="zoom-in" data-aos-delay="2000" data-aos-easing="ease-in-out" >
-        <h1 >Captivating Paradise</h1>
+    <div className="main">
+      <div className="drop_shadow">
+        <video
+          src={homeVideo}
+          autoPlay
+          loop
+          muted
+          data-aos="flip-left"
+          data-aos-delay="600"
+          data-aos-easing="ease-in-out"
+        />
+      </div>
+
+      {/* <div
+        className="home-text"
+        data-aos="zoom-in"
+        data-aos-delay="2000"
+        data-aos-easing="ease-in-out"
+      >
+        <h1>Captivating Paradise</h1>
         <h4>for unwinding and reveling</h4>
       </div> */}
 
-
-      <div className='home-search-box'>
-
-        <div className='row1'>
+      {/*responsive old home-search-box */}
+      {/* <div className="home-search-box"> */}
+      {/* <div className="row1">
           <div>
             <label>CHECK-IN DATE</label>
-            <input type="date" id="myDate" placeholder="Check-in Date"
-              name='checkindate' value={checkindate} onChange={(e) => setCheckindate(e.target.value)} />
+            <input
+              type="date"
+              id="myDate"
+              placeholder="Check-in Date"
+              name="checkindate"
+              value={checkindate}
+              onChange={(e) => setCheckindate(e.target.value)}
+            />
           </div>
           <div>
             <label>CHECK-OUT DATE</label>
-            <input type="date" id="myDate" placeholder="Check-in Date"
-              name='checkoutdate' value={checkoutdate} onChange={(e) => setCheckoutdate(e.target.value)} />
+            <input
+              type="date"
+              id="myDate"
+              placeholder="Check-in Date"
+              name="checkoutdate"
+              value={checkoutdate}
+              onChange={(e) => setCheckoutdate(e.target.value)}
+            />
           </div>
-          <div onClick={handleCheckAvailable}>
-            CHECK AVAILABILITY
-          </div>
-        </div>
+          <div onClick={handleCheckAvailable}>CHECK AVAILABILITY</div>
+        </div> */}
 
-        <div className='row2'>
-          {/* <label style={{ letterSpacing: '2px', paddingLeft: '.1rem', fontWeight: 'bold' }}>SEARCH RESORT</label> */}
+      {/* <div className="row2">
+          <label
+            style={{
+              letterSpacing: "2px",
+              paddingLeft: ".1rem",
+              fontWeight: "bold",
+            }}
+          >
+            SEARCH RESORT
+          </label>
 
-
-          <select id='select' name='resort' value={resortId}
-            onChange={(e) => setResortId(e.target.value)}>
+          <select
+            id="select"
+            name="resort"
+            value={resortId}
+            onChange={(e) => setResortId(e.target.value)}
+          >
             <option>SELECT RESORT</option>
             {allProperties.map((resort, i) => {
-              return (
-                <option
-                  value={resort._id}>{resort.resortName}</option>
-              )
-            })}
-          </select>
-
-        </div>
-
-        <div className='row3' onClick={handleCheckAvailable} >
-          CHECK AVAILABILITY
-        </div>
-      </div>
-
-
-
-
-      {/* <div className='home-search-box-desktop'>
-        <div>
-          <label className='dates'>Check-in date</label>
-          <input type="date" id="myDate" className="custom-date-input" placeholder="dd/mm/yyyy"
-            name='checkindate' value={checkindate} onChange={(e) => setCheckindate(e.target.value)} />
-        </div>
-        <div>
-          <label>CheckIn Date</label>
-          <input type="date" id="myDate" className="custom-date-input" placeholder="dd/mm/yyyy"
-            name='checkoutdate' value={checkoutdate} onChange={(e) => setCheckoutdate(e.target.value)} />
-        </div>
-        <div>
-          <select id='select' name='resort' value={resortId}
-            onChange={(e) => setResortId(e.target.value)}>
-            <option>SELECT RESORT</option>
-            {allProperties.map((resort, i) => {
-              return (
-                <option
-                  value={resort._id}>{resort.resortName}</option>
-              )
+              return <option value={resort._id}>{resort.resortName}</option>;
             })}
           </select>
         </div>
-        <div onClick={handleCheckAvailable} style={{ paddingTop: '.35rem', fontSize: '.9rem' }}>
+
+        <div className="row3" onClick={handleCheckAvailable}>
           CHECK AVAILABILITY
         </div>
       </div> */}
 
-
-
-      <div className='home-search-box-desktop'>
-        <div className='select-btnwrap'>
-          <label>Looking For?</label>
-          <select id='select' name='resort' value={resortId}
-            onChange={(e) => setResortId(e.target.value)}>
+      {/* <div className="home-search-box-desktop"> */}
+      {/* <div>
+          <label className="dates">Check-in date</label>
+          <input
+            type="date"
+            id="myDate"
+            className="custom-date-input"
+            placeholder="dd/mm/yyyy"
+            name="checkindate"
+            value={checkindate}
+            onChange={(e) => setCheckindate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>CheckIn Date</label>
+          <input
+            type="date"
+            id="myDate"
+            className="custom-date-input"
+            placeholder="dd/mm/yyyy"
+            name="checkoutdate"
+            value={checkoutdate}
+            onChange={(e) => setCheckoutdate(e.target.value)}
+          />
+        </div> */}
+      {/* <div>
+          <select
+            id="select"
+            name="resort"
+            value={resortId}
+            onChange={(e) => setResortId(e.target.value)}
+          >
             <option>SELECT RESORT</option>
             {allProperties.map((resort, i) => {
-              return (
-                <option
-                  value={resort._id}>{resort.resortName}</option>
-              )
+              return <option value={resort._id}>{resort.resortName}</option>;
             })}
           </select>
         </div>
-        <div className='dates-wrap'>
-          <label className='dates'>Check-in Date</label>
-          <input type="date" id="myDate" className="custom-date-input" placeholder="dd/mm/yyyy"
-            name='checkindate' value={checkindate} onChange={(e) => setCheckindate(e.target.value)} />
+        <div
+          onClick={handleCheckAvailable}
+          style={{ paddingTop: ".35rem", fontSize: ".9rem" }}
+        >
+          CHECK AVAILABILITY
         </div>
-        <div className='dates-wrap'>
-          <label className='dates'>Check-out Date</label>
-          <input type="date" id="myDate" className="custom-date-input" placeholder="dd/mm/yyyy"
-            name='checkoutdate' value={checkoutdate} onChange={(e) => setCheckoutdate(e.target.value)} />
-        </div>
+      </div> */}
 
-        <div onClick={handleCheckAvailable} >
-          CHECK <br/>AVAILABILITY
-        </div>
-      </div>
-
+      {/*comment for small of time */}
+      {/* {issearchBox && ( */}
     </div>
-  )
-}
+  );
+};
 
-export default Video
+export default Video;
+
+// {/* export default Video; */}
+
+// {  /* <div className="home-search-box-desktop">
+// <div className="small_card_img">
+//   <img className="card_img" src={resortImage} alt="beach reasort img" />
+// </div>
+// <div className="select-btnwrap">
+//   <label>Looking For?</label>
+//   <select
+//     id="select"
+//     name="resort"
+//     value={resortId}
+//     onChange={(e) => setResortId(e.target.value)}
+//   >
+//     <option>SELECT RESORT</option>
+//     {allProperties.map((resort, i) => {
+//       return <option value={resort._id}>{resort.resortName}</option>;
+//     })}
+//   </select>
+// </div>
+
+// <div className="dates_container with-line">
+//   <div className="containt_wraper">
+//     <h2 className="dates_heading">Start to end Dates</h2>
+//     <div className="dates_wrapper">
+//       <label className="date_holder">
+//         {`${format(selecteDated.startDate, "MM/dd/yyyy")} to ${format(
+//           selecteDated.endDate,
+//           "MM/dd/yyyy"
+//         )}`}
+//       </label>
+//       <button
+//         className="toggle_calender"
+//         onClick={() => handlingToggling()}
+//       >
+//         <SlCalender />
+//       </button>
+//     </div>
+//   </div>
+
+//   {!isScreenSmall && toggler && (
+//     <DateRangePicker
+//       className="dateRange"
+//       ranges={[selecteDated]}
+//       onChange={(range) => handlingSelectDate(range)}
+//       direction="horizontal"
+//       minDate={new Date()}
+//       preventSnapRefocus={true}
+//     />
+//   )}
+
+//   {isScreenSmall && toggler && (
+//     <Calendar
+//       className="dateRange"
+//       ranges={[selecteDated]}
+//       onChange={(range) => handlingSelectDate(range)}
+//       // direction="horizontal"
+//       minDate={new Date()}
+//       preventSnapRefocus={true}
+//       orientation={orientation}
+//     />
+//   )}
+// </div>
+//  <div className="dates-wrap">
+//   <label className="dates">Check-out Date</label>
+//   <input
+//     type="date"
+//     id="myDate"
+//     className="custom-date-input"
+//     placeholder="dd/mm/yyyy"
+//     name="checkoutdate"
+//     value={checkoutdate}
+//     onChange={(e) => setCheckoutdate(e.target.value)}
+//   />
+//   </div>
+
+// <div className="check_availability" onClick={handleCheckAvailable}>
+//   CHECK <br />
+//   AVAILABILITY
+// </div>
+//   </div> */}
