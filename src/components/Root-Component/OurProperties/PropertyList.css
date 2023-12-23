@@ -1,9 +1,0 @@
-.card-wrapper{
-    /* border:1px solid black; */
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 2fr));
-    gap: 15px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
