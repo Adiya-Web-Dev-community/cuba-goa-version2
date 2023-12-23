@@ -1,0 +1,189 @@
+/* .cards{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+} */
+
+.spa-card-container{
+  /* width: 400px; */
+  width: 22rem;
+  margin-top: 50px;
+  /* padding-bottom: 3rem; */
+  /* margin: auto;
+  margin-top: 25px; */
+  /* margin-left: 1.5rem;
+  margin-top: 1rem; */
+  /* margin-right: 50px; */
+  /* border: 1px solid #908f8f; */
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  border-radius: 12px;
+}
+
+#spa-card-img>img{
+  width: 22rem;
+  height: 15rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: -5px;
+  /* border: 1px solid black; */
+  padding: 0px;
+  /* margin-top: 1.5rem; */
+}
+
+.spa-card-footer{
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 30px;
+  padding-bottom: 10px;
+  /* margin-top: 10px; */
+}
+
+.spa-card-footer-lb{
+  font-size: 16px;
+}
+
+.spa-card-footer-rb{
+  margin-top: 10px;
+  margin-left: 0%;
+}
+
+.spa-card-footer-rb>button{
+  padding-top: 5px;
+  width: 110px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.spa-card-footer-rb>div>button:hover{
+  background-color: black;
+}
+
+#spa-card-add-btn{
+  background-color: rgb(250, 199, 106);
+  color: rgb(49, 49, 49);
+}
+
+#spa-card-add-btn:hover{
+  background-color:  orange;
+}
+
+#spa-card-delete-btn{
+  background-color: rgb(248, 69, 69);
+}
+
+#spa-card-delete-btn:hover{
+  background-color: rgb(255, 0, 0);
+}
+
+.spa-card-header{
+  padding: 10px;
+  /* background-color: #009fe1; */
+  background: rgba(207, 229, 237, 0.5);
+  /* width: 120px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.view-spa-card-details-btn{
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.view-spa-card-details-btn:hover{
+  text-shadow: 1px 1px 1px black;
+}
+
+.spa-card-delete-icon{
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.spa-card-delete-icon:hover{
+  color: red;
+  /* text-shadow: 1px 1px 1px red; */
+}
+
+.custom-ui{
+  background-color: #28bae6;
+  color: #FFF;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.custom-ui>button{
+  background-color: orange;
+  color: #FFF;
+  margin-top: 15px;
+}
+
+.custom-ui>button:hover{
+  background-color: rgb(250, 0, 0);
+}
+
+@media screen and (max-width: 650px) {
+  .spa-card-container{
+      width: 350px;
+      /* height: 52rem; */
+      box-sizing: content-box;
+      /* padding-bottom: 3rem; */
+      margin-top: 2rem;
+      /* margin-top: 5rem; */
+      /* border: 1px solid #908f8f; */
+      border-radius: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .spa-card-container{
+      /* width: 295px; */
+      /* width: 18rem; */
+      width: 20rem;
+      /* height: 52rem; */
+      box-sizing: content-box;
+      /* padding-bottom: 3rem; */
+      /* margin: auto; */
+      margin-top: 5rem;
+      /* border: 1px solid #908f8f; */
+      border-radius: 12px;
+  }
+
+  /* .card-footer-lb>:nth-child(1){
+      font-size: 13px;
+  }
+  
+  .card-footer-lb>:nth-child(2){
+      width: 100%;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+  } */
+
+  .card-footer-rb>div>button{
+      padding: 0px;
+      width: 100px;
+      height: 30px;
+      font-size: 11px;
+  }
+
+  .spa-prop-card-details-btn{
+      font-size: 15px;
+  }
+
+  .spa-card-delete-icon{
+       font-size: 16px;
+      /* background: hsla(0,3%,94%,.373); */
+  }
+  .spa-card-container{
+      margin-top: 2rem;
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+  #spa-card-img>img{
+      width: 100%;
+  }
+}

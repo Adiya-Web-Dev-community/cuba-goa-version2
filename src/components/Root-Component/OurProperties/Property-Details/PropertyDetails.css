@@ -1,0 +1,147 @@
+.view-details-wrapper {
+    /* border: 1px solid black; */
+    width: 70%;
+    margin: auto;
+    margin-top: 7rem;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.view-details-wrapper .section1 .back-btn {
+    background-color: white;
+    font-weight: normal;
+    /* border: 1px solid black; */
+    border-radius: 0.5rem;
+    padding: 0.5px 1rem;
+}
+
+.view-details-wrapper .section1 .back-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.view-details-wrapper .section2 {
+    margin-top: 15px;
+    /* border: 1px solid black; */
+
+}
+
+.view-details-wrapper .section2 .row1 {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.view-details-wrapper .section2 .row1 .col1 {
+    /* border: 1px solid black; */
+    /* padding: 0.5rem 1rem; */
+    width: 80%;
+}
+
+.view-details-wrapper .section2 .row1 .col2 {
+    margin: 0rem 0rem;
+}
+
+.view-details-wrapper .section2 .row1 .col2 select {
+    height: 3rem;
+    width: 9rem;
+    margin-left: 0rem;
+    padding-left: 0rem;
+}
+
+.col2>img {
+    padding-top: 0px;
+    height: 250px;
+    width: 500px;
+    border-radius: 3px;
+}
+
+.view-details-wrapper .section3 .col1{
+   /* padding-left: 15px;
+   padding-right: 15px; */
+   margin-top: 20px;
+}
+
+.section4{
+    margin-top: 35px;
+}
+
+.section4>h3{
+    padding-left: 15px;
+}
+
+.room-card-wrapper{
+    /* display: flex; */
+}
+
+@media only screen and (max-width:1250px) {
+    .view-details-wrapper .section2 .row1 {
+        display: flex;
+        justify-content: none;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .view-details-wrapper {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;
+        margin-top: 7rem;
+        padding: 1rem 0rem 1rem 0rem;
+    }
+
+    .view-details-wrapper .section1 .back-btn {
+        background-color: white;
+        font-weight: normal;
+        /* border: 1px solid black; */
+        border-radius: 0.5rem;
+        padding: 0.5px 1rem;
+    }
+
+    .view-details-wrapper .section1 .back-btn:hover {
+        /* background-color: black; */
+        color: white;
+    }
+
+    .view-details-wrapper .section2 {
+        margin-top: 1rem;
+        /* border: 1px solid black; */
+
+    }
+
+    .view-details-wrapper .section2 .row1 {
+        display: flex;
+        justify-content: none;
+        flex-direction: column;
+    }
+
+    .view-details-wrapper .section2 .row1 .col1 {
+        /* border: 1px solid black; */
+        padding: 0rem 1rem;
+        width: 100%;
+    }
+
+    .view-details-wrapper .section2 .row1 .col2 {
+        margin: 0.5rem 1rem;
+    }
+
+    .view-details-wrapper .section2 .row1 .col2 select {
+        height: 2rem;
+        width: 15rem;
+    }
+    .view-details-wrapper .section3 .col1{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+@media only screen and (max-width:680px){
+    .col2>img {
+        padding-top: 0px;
+        height: auto;
+        width: 100%;
+    }
+}

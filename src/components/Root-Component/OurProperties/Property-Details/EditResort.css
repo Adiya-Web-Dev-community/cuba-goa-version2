@@ -1,0 +1,26 @@
+.editResortDeleteImg{
+    position: relative;
+}
+
+.editResortDeleteIcon{
+    padding-top: 0px;
+    position: absolute;
+    font-size: 22px;
+    background-color: red;
+    color: #FFF;
+    top: 45%;
+    left: 45%;
+}
+
+.editResortDeleteIcon:hover{
+    background-color: rgb(250, 51, 51);
+}
+
+@media screen and (max-width: 480px) {
+    .edit-resort-btn{
+        padding: 0px;
+        width: 100px;
+        height: 30px;
+        font-size: 11px;
+    }
+}
