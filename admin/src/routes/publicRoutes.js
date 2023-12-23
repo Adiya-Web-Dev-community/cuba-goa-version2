@@ -3,8 +3,8 @@ import { Outlet, Navigate } from "react-router-dom";
 
 function PublicRoute() {
   const token = localStorage.getItem("user");
-  //console.log(userData)
-  if (!token.authorization) {
+  console.log(token?.authorization);
+  if (!token?.authorization) {
     return <Outlet />;
   } else {
     return <Navigate to="/" />;

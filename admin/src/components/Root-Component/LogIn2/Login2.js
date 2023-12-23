@@ -55,6 +55,8 @@ const Login2 = ({ showLogin, setShowLogin }) => {
         // console.log(response.data)
         // console.log(response.data.username)
         // console.log(response.data.token)
+
+        console.log(response);
         if (response.status === 200) {
           console.log(response.data.message);
           const userWithToken = {
@@ -68,11 +70,9 @@ const Login2 = ({ showLogin, setShowLogin }) => {
           // localStorage.setItem('token', response.data.token)
           localStorage.setItem("user", JSON.stringify(userWithToken));
           // localStorage.setItem("token", response.data.data.token);
-          navigate("/chat");
-          toast.success("LoggedIn successfully");
+          navigate("/bookings");
+          // toast.success("LoggedIn successfully");
         }
-
-        navigate("/");
       })
       .catch((err) => {
         setLoading(false);

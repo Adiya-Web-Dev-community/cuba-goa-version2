@@ -6,14 +6,15 @@ import { useNavigate, useParams } from "react-router";
 import Footer from "../Footer/Footer";
 import BookingList from "./bookingList";
 import PreLoader from "../../Preloader-Component/Preloader-Component";
+import ChatOpeningButton from "../../Chat/ChatOpeningButton";
 
 const ViewBooking = () => {
   const [filterCriteria, setFilterCriteria] = useState();
   const [filterInput, setFilterInput] = useState();
   const navigate = useNavigate();
   const [details, setDetails] = useState([]);
-  const [bookingList, setBookingList] = useState();
-  const token = localStorage.getItem("user");
+  const [bookingList, setBookingList] = useState([]);
+  const token = JSON.parse(localStorage.getItem("user"));
   const fetchBookingList = async () => {
     await axios
       .get("/get-all-bookings", {
@@ -22,8 +23,10 @@ const ViewBooking = () => {
         },
       })
       .then((res) => {
-        console.log(res.data.data);
-        setBookingList(res.data.data.reverse());
+        if (res.status === 200) {
+          console.log(res);
+          setBookingList(res?.data?.data?.reverse());
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -34,9 +37,9 @@ const ViewBooking = () => {
     fetchBookingList();
   }, [bookingList]);
 
-  if (!bookingList) {
-    return <PreLoader />;
-  }
+  // if (!bookingList) {
+  //   return <PreLoader />;
+  // }
 
   // console.log("Booking List => ", bookingList)
   return (
@@ -70,6 +73,8 @@ const ViewBooking = () => {
       </div>
       {/* {console.log(filterCriteria)} */}
       {/* {console.log(filterInput)} */}
+
+      <ChatOpeningButton />
     </>
   );
 };
