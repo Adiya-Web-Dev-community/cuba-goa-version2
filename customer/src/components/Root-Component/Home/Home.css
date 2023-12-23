@@ -508,7 +508,8 @@
   margin-top: 2rem;
   padding: 1rem;
   border: 2px solid black;
-  margin-bottom: 0;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .property-locations .location-header {
@@ -1202,5 +1203,12 @@
 
   .modal_input {
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .home-content {
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }

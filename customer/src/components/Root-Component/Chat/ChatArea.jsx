@@ -19,20 +19,19 @@ import { Link } from "react-router-dom";
 
 const ChatArea = () => {
   const dummyRef = useRef();
-  // const { width } = useWindowDimensions();
+
   const { userName, authorization: token } = JSON.parse(
     localStorage.getItem("user")
   );
   // const userName = localStorage.getItem("userName");
   // const userName = "userName";
   const [isLoading, setIsLoading] = useState(true);
-  //   const [messagesLoading, setMessageLoading] = useState(true);
-  //   const [chatList, setChatList] = useState([]);
+
   const [message, setMessage] = useState("");
   const [selectUser, setSelectUser] = useState({});
-  const [selectAdmin, setSelectAdmin] = useState(false);
+  // const [selectAdmin, setSelectAdmin] = useState(false);
   const [userList, setUserList] = useState([]);
-  const [searchUser, setSearchUser] = useState("");
+  // const [searchUser, setSearchUser] = useState("");
   const [selectChatId, setSelectChatId] = useState("");
   const [allMessages, setAllMessages] = useState([]);
   const [userDetails, setUserDetails] = useState({});
@@ -40,80 +39,6 @@ const ChatArea = () => {
   // get admin details
   const [admin, setAdmin] = useState([]);
 
-  /*
-   {
-    userId, userName, userEmail
-   }
-   
-   */
-
-  // console.log(userName, "users name");
-  // const token = 0;
-  // const getAdminData = async () => {
-  //   try {
-  //     // const resp = await axios.get("/admin-details");
-  //     // search_user
-  //     const resp1 = await axios.get(
-  //       "/search-user",
-  //       {
-  //         params: {
-  //           search_user: searchUser,
-  //         },
-  //       },
-  //       { headers: { authorization: token } }
-  //     );
-  //     console.log(resp1, "searchUser");
-
-  //     const resp2 = await axios.get(
-  //       "/all-active-conversations",
-
-  //       { headers: { authorization: token } }
-  //     );
-  //     const filterCoustemerData = resp2.data.filter(
-  //       (user) => user.users[0].userType === "customer"
-  //     );
-
-  //     console.log(resp2);
-  //     console.log(filterCoustemerData, "filter customer Data");
-
-  //     // console.log("admin detail", resp.data[0]);
-  //     // setAdmin(...filterCoustemerData);
-
-  //     // const accessId = await axios.post(
-  //     //   "/get-access-to-conversation",
-  //     //   {
-  //     //     receiverId: response.data.data.admins[0]._id,
-  //     //     userType: response.data.data.admins[0].userType.slice(
-  //     //       0,
-  //     //       response.data.data.admins[0].userType.length - 1
-  //     //     ),
-  //     //   },
-  //     //   {
-  //     //     headers: { authorization: token },
-  //     //   }
-  //     // );
-  //   } catch (err) {
-  //     console.log(err.message);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getAdminData();
-  // }, []);
-  //?search=${searchUser}
-  // fetch users
-  ///search-user?search_user=demo
-
-  //   const fetchAcess =async()=>{
-  //     try{
-
-  // })
-  //     }catch(){
-
-  //     }
-  //   }
-
-  //for users
   const fetchData = async () => {
     // console.log(token);
     try {
@@ -145,28 +70,15 @@ const ChatArea = () => {
         }
       );
 
-      // console.log(
-      //   response.data.data.admins[0].userType.slice(
-      //     0,
-      //     response.data.data.admins[0].userType.length - 1
-      //   )
-      // );
-
       //for users
       // console.log(accessId.data.chat._id, "user chat Id with admin");
 
       setSelectChatId(accessId?.data?.chat?._id);
 
-      console.log(accessId?.data?.chat?._id, "from get-acess api");
+      const res2 = await axios.get(`/chat/${accessId?.data?.chat?._id}`);
+      setAllMessages(res2.data);
 
-      // console.log(data, "people of chats");
-      // const filterUser = await axios.get(
-      //   `/search-user?search_user=${searchUser}`
-      // );
-
-      // console.log(filterUser.data);
-      // setUserList(data);
-      // setIsLoading(false);
+      // console.log(accessId?.data?.chat?._id, "from get-acess api");
     } catch (err) {
       console.log(err.message);
       // setIsLoading(false);
@@ -176,13 +88,12 @@ const ChatArea = () => {
   const fetchAllChats = async () => {
     try {
       //     // setAllMessages(res2.data);
-      console.log(selectChatId, "from chat api");
+      // console.log(selectChatId, "from chat api");
       //step_03 get all chat by using chat id
-      const res2 = await axios.get(`/chat/${selectChatId}`);
-      setAllMessages(res2.data);
+      // const res2 = await axios.get(`/chat/${selectChatId}`);
+      // setAllMessages(res2.data);
       // setAllMessages([]);
       // console.log(res2, "chat of users");
-
       //     // console.log(res2, "chat of users");
       //     const res1 = await axios.get(
       //       //         "/access-chat",
@@ -248,84 +159,19 @@ const ChatArea = () => {
       //   }
       // );
       // setAllMessages([...allMessages, res.data]);
+      // fetchAllChats();
+      fetchData();
     } catch (err) {
       console.log(err);
     }
-
-    fetchAllChats();
   };
 
   useEffect(() => {
     fetchData();
-  }, [searchUser]);
-  useEffect(() => {
-    fetchAllChats();
+    // fetchAllChats();
   }, [selectUser]);
-  //   useEffect(() => {
-  //     dummyRef?.current?.scrollIntoView();
-  //   }, [allMessages]);
 
-  // const users = [
-  //   {
-  //     _id: "1",
-  //     firstName: "John",
-  //     lastName: "Doe",
-  //     email: "john.doe@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcuNsgCIWPOs6hgEKQ3w_D6ehKS_IkcM_5u5f7x4qAGCJrOJVgkDFoBpytVa8wJY2l5O4&usqp=CAU",
-  //   },
-  //   {
-  //     _id: "2",
-  //     firstName: "Jane",
-  //     lastName: "Smith",
-  //     email: "jane.smith@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFA9bLSF5x5jPFcYFikCLaNrFel6C8FfJpeyQYhmG-Xuc3yhuTYprL3iQApDAoc-5nZ28&usqp=CAU",
-  //   },
-  //   {
-  //     _id: "3",
-  //     firstName: "Alice",
-  //     lastName: "Johnson",
-  //     email: "alice.johnson@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg5YRm43jkx-7W2Cp-EiUF4XJI-edcJbkSr72uNMNv4MKCNODaxv_a7x0sHUsAVcp31N8&usqp=CAU",
-  //   },
-  //   {
-  //     _id: "4",
-  //     firstName: "Bob",
-  //     lastName: "Anderson",
-  //     email: "bob.anderson@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpRfpo86SB6nHTlhI0FZFHPbdDb-y_QKJuvx6ugVdIEn1chvgrONhKsaG_spVs9sxjv84&usqp=CAU",
-  //   },
-  //   {
-  //     _id: "5",
-  //     firstName: "Eva",
-  //     lastName: "Williams",
-  //     email: "eva.williams@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf4kXNbNfsbtjpqJyzCJyGmOnzUdIJK2b_-UpxW4M900Yug_WqJO2UA2R9gYq8gTcLYlg&usqp=CAU",
-  //   },
-  //   {
-  //     _id: "6",
-  //     firstName: "Mike",
-  //     lastName: "Taylor",
-  //     email: "mike.taylor@example.com",
-  //     profileImg:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGJPxvhV4u_WpRUlvawm9YpDkbtL0d8D2FlZ6HgC5JcoeHfqR-FmG0eWyeLfbATOv2EU&usqp=CAU",
-  //   },
-  // ];
-  // console.log(userList, "users");
-  // console.log(userList?.admins, "admins data");
-
-  // const userName = "admin";
-
-  // const message2 = allMessages.map((message) => {
-  //   console.log(message._id);
-  // });
-  // const allMessages = [];
-
-  // console.log(userList?.admins[0]?.name, "admin only user");
+  console.log(userList);
 
   return (
     <main className="chat_container">
@@ -347,7 +193,6 @@ const ChatArea = () => {
           <div className="enter_person_header">
             <div className="header_container">
               <img
-                // src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
                   userName
                 )}&size=150`}
@@ -358,7 +203,6 @@ const ChatArea = () => {
                 <h3 className="enter_person_name">
                   {userName || "Logan Gravic"}
                 </h3>
-                {/* <p className="enter_person_designation">{userName.includes("user") ? "User" : "Admin"}</p> */}
               </div>
             </div>
             <button className="goback_home">
@@ -367,46 +211,6 @@ const ChatArea = () => {
               </Link>
             </button>
           </div>
-          {/* {userName === "admin" && (
-            <div className="search_input">
-              
-
-              <div class="icon_container">
-                <svg
-                  style={{
-                    width: "0.9rem",
-                    height: "0.9rem",
-                    color: "#718096",
-                  }}
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-
-             
-              <input
-                value={searchUser}
-                onChange={(e) => setSearchUser(e.target.value)}
-                type="text"
-                placeholder="Search user"
-                className="search_user"
-              />
-            </div>
-          )} */}
-          {/* <FaWindowClose
-           
-            className="close_icon"
-          /> */}
         </section>
 
         <section
@@ -452,20 +256,19 @@ const ChatArea = () => {
                 // key={user._id}
                 onClick={() => {
                   setSelectUser(user);
-                  setSelectAdmin(false);
                 }}
                 className={"user_element"}
                 // ; background-color: ;
                 style={{
-                  backgroundColor:
-                    user._id === selectUser?._id
-                      ? "rgb(165 243 252)"
-                      : "transparent",
+                  backgroundColor: "rgb(165 243 252)",
+                  // user._id === selectUser?._id
+                  //   ? "rgb(165 243 252)"
+                  //   : "transparent",
                   ":hover": {
-                    backgroundColor:
-                      user._id === selectUser?._id
-                        ? "transparent"
-                        : "rgb(241 245 249)",
+                    backgroundColor: "transparent",
+                    // user._id === selectUser?._id
+                    //   ? "transparent"
+                    //   : "rgb(241 245 249)",
                   },
                 }}
               >
@@ -501,26 +304,28 @@ const ChatArea = () => {
         }`}
       >
         <section className="message_holding_container">
-          <section className="heading_area">
-            <AiOutlineArrowLeft
-              onClick={() => setSelectUser({})}
-              className="arrow_icon"
-            />
-            <div
-              style={{
-                backgroundImage: `url(${
-                  selectUser
-                    ? `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                        "Test Admin 01"
-                      )}&size=150`
-                    : `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                        "admin"
-                      )}&size=150`
-                })`,
-              }}
-              className="user_image"
-            ></div>
-            {/* <div
+          {userList?.admins?.map((user) => (
+            <section className="heading_area" key={user._id}>
+              <AiOutlineArrowLeft
+                onClick={() => setSelectUser({})}
+                className="arrow_icon"
+              />
+              <div
+                style={{
+                  backgroundImage: `url(${
+                    user.name
+                      ? // selectUser
+                        `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                          "Test Admin 01"
+                        )}&size=150`
+                      : `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                          "admin"
+                        )}&size=150`
+                  })`,
+                }}
+                className="user_image"
+              ></div>
+              {/* <div
               style={{
                 backgroundImage: `url(${
                   selectAdmin ? "admin_avatar_url" : selectUser.profileImg
@@ -528,91 +333,97 @@ const ChatArea = () => {
               }}
               className="user_image"
             ></div> */}
-            <span
-              className="user_heading_name"
-              style={{ textTransform: "capitalize" }}
-            >
-              {/* {selectAdmin ? "Help" : selectUser.firstName || searchUser.name}
+              <span
+                className="user_heading_name"
+                style={{ textTransform: "capitalize" }}
+              >
+                {/* {selectAdmin ? "Help" : selectUser.firstName || searchUser.name}
               {selectAdmin ? "Desk" : selectUser.lastName} */}
-              {selectUser.name}
-            </span>
+                {/* {selectUser.name} */}
 
-            <p className="user_notation">
-              {selectUser?.userType?.slice(0, selectUser?.userType?.length - 1)}
-            </p>
-          </section>
+                {user.name}
+              </span>
+
+              <p className="user_notation">
+                {/* {selectUser?.userType?.slice(
+                  0,
+                  selectUser?.userType?.length - 1
+                )} */}
+                {user.userType}
+              </p>
+            </section>
+          ))}
           {/* chat messages */}
           <section className="messages_container">
             <div style={{ marginTop: "1.25rem" }}>
-              {selectUser.name &&
-                allMessages.map((message) => (
-                  <div
-                    key={message?._id}
+              {/* {selectUser.name && */}
+              {allMessages.map((message) => (
+                <div
+                  key={message?._id}
+                  style={{
+                    marginLeft:
+                      message?.sender?.userId === userDetails.userId
+                        ? "auto"
+                        : "0",
+                    marginRight:
+                      message?.sender?.userId === userDetails?.userId
+                        ? "0"
+                        : "auto",
+                    display: "flex",
+                    justifyContent:
+                      message?.sender?.userId === userDetails?.userId
+                        ? "flex-end "
+                        : "flex-start",
+                    position: "relative",
+                    width: "75%",
+                  }}
+                >
+                  <p
                     style={{
-                      marginLeft:
-                        message?.sender?.userId === userDetails.userId
-                          ? "auto"
-                          : "0",
-                      marginRight:
+                      backgroundColor:
                         message?.sender?.userId === userDetails?.userId
-                          ? "0"
-                          : "auto",
-                      display: "flex",
-                      justifyContent:
-                        message?.sender?.userId === userDetails?.userId
-                          ? "flex-end "
-                          : "flex-start",
-                      position: "relative",
-                      width: "75%",
+                          ? "#4dc0b5"
+                          : "#a0aec0",
+                      width: "fit-content",
+                      padding: "0.375rem 0.625rem 7px",
+                      borderRadius: "0.375rem",
+                      display: "inline-block",
                     }}
                   >
-                    <p
-                      style={{
-                        backgroundColor:
-                          message?.sender?.userId === userDetails?.userId
-                            ? "#4dc0b5"
-                            : "#a0aec0",
-                        width: "fit-content",
-                        padding: "0.375rem 0.625rem 7px",
-                        borderRadius: "0.375rem",
-                        display: "inline-block",
-                      }}
-                    >
-                      {message.messageContent}
-                    </p>
-                    <span
-                      className={`absolute top-0 border-b-[20px]  ${
-                        message?.sender?.firstName === selectUser.id
-                          ? "border-b-cyan-200 border-r-[20px] border-r-transparent rotate-90 -right-2.5"
-                          : "border-b-slate-200 border-l-[20px] border-l-transparent -rotate-90 -left-2.5"
-                      }`}
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        borderBottom: "20px solid #yourColor",
-                        ...(message?.sender?.firstName === selectUser.id
-                          ? {
-                              borderRight: "20px solid transparent",
-                              borderLeft: "none",
-                              transform: "rotate(90deg)",
-                              right: "-2.5px",
-                              left: "auto",
-                            }
-                          : {
-                              borderRight: "none",
-                              borderLeft: "20px solid transparent",
-                              transform: "rotate(-90deg)",
-                              right: "auto",
-                              left: "-2.5px",
-                            }),
-                      }}
-                    ></span>
-                  </div>
-                ))}
+                    {message.messageContent}
+                  </p>
+                  <span
+                    className={`absolute top-0 border-b-[20px]  ${
+                      message?.sender?.firstName === selectUser.id
+                        ? "border-b-cyan-200 border-r-[20px] border-r-transparent rotate-90 -right-2.5"
+                        : "border-b-slate-200 border-l-[20px] border-l-transparent -rotate-90 -left-2.5"
+                    }`}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      borderBottom: "20px solid #yourColor",
+                      ...(message?.sender?.firstName === selectUser.id
+                        ? {
+                            borderRight: "20px solid transparent",
+                            borderLeft: "none",
+                            transform: "rotate(90deg)",
+                            right: "-2.5px",
+                            left: "auto",
+                          }
+                        : {
+                            borderRight: "none",
+                            borderLeft: "20px solid transparent",
+                            transform: "rotate(-90deg)",
+                            right: "auto",
+                            left: "-2.5px",
+                          }),
+                    }}
+                  ></span>
+                </div>
+              ))}
               {/* <div ref={dummyRef}></div> */}
             </div>
           </section>
-
           <form onSubmit={handleMessage} className="form_style">
             <div className="form_controll">
               <input

@@ -559,3 +559,10 @@
     padding-left: 8px;
   }
 }
+
+@media only screen and (min-width: 1600px) {
+  .header {
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
+}
