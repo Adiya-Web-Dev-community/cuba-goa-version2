@@ -11,6 +11,7 @@ import { Icon } from "react-icons-kit";
 import { cross } from "react-icons-kit/icomoon/cross";
 import cubaGoaLogo from "../../assets/logocubagoa.png";
 import axios from "../../helpers/axios";
+
 import { toast } from "react-hot-toast";
 
 //big screen navbar icon
@@ -83,8 +84,8 @@ const Header = ({ auth, setAuth }) => {
 
   const getPropertiesData = async () => {
     await axios
-      // .get(`/hotelbook`)
-      .get(`${process.env.REACT_APP_HOST}/hotelbook`)
+      .get(`/hotelbook`)
+
       .then((res) => {
         console.log("property list => ", res.data);
         setAllProperties(res.data);

@@ -159,8 +159,8 @@ const Home = () => {
 
   const getPropertiesData = async () => {
     await axios
-      .get(`${process.env.REACT_APP_HOST}/hotelbook`)
-      // .get(`/hotelbook`)
+
+      .get(`/hotelbook`)
       .then((res) => {
         console.log(res.data);
 
