@@ -1,7 +1,6 @@
 import "./App.css";
-
-import { Routes, Route } from "react-router-dom";
-import React from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Register from "./components/Root-Component/Register/Register";
 import RatingForm from "./components/Root-Component/rating-form/RatingForm";
@@ -17,15 +16,12 @@ import ViewRoomDetails from "./components/Root-Component/view-details/View-Room-
 import EventPage from "./components/Root-Component/event-page/EventPage";
 import Spa from "./components/Root-Component/spa/Spa";
 import Home from "./components/Root-Component/Home/Home";
-//dates reducer , taking dates from home page
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-
 import OurProperties from "./components/Root-Component/OurProperties/OurProperties";
 import ContactUs from "./components/Root-Component/Contact/ContactUs";
 import SignIn from "./components/Root-Component/signin/Signin";
 import WeddingDetails from "./components/Root-Component/wedding-venue-details/WeddingDetails";
-
 import NorthGoa from "./components/Root-Component/things-to-do/NorthGoa";
 import SouthGoa from "./components/Root-Component/things-to-do/SouthGoa";
 import Activity from "./components/Root-Component/things-to-do/Activity";
@@ -35,66 +31,102 @@ import RoomTable from "./components/Root-Component/view-details/RoomTable-With-A
 import ChatArea from "./components/Root-Component/Chat/ChatArea";
 import Layout from "./ui/Layout";
 import { store } from "./components/reducer/store";
+import Testimonials from "./components/Root-Component/Home/Testimonials";
+import FarmServices from './components/Root-Component/Services/Services';
+import Payment from "./components/Root-Component/Payment/Payment";
+import BentoGuestPage from "./components/Root-Component/Guest/GuestPage";
+// import bgImage from "../src/assets/alpine-hut-3225908_1280.jpg"
+const SplashScreen = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/");
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [navigate]);
+
+    return (
+        <div className="splash-container">
+            <video className="splash-video" autoPlay loop muted playsInline>
+                <source src="https://cdn.pixabay.com/video/2022/06/10/119885-719283332_large.mp4" type="video/mp4" />
+            </video>
+            <div className="splash-overlay"></div>
+            <div className="splash-content">
+                <h1 className="splash-title">Happy Day at Mayi Farms</h1>
+                    <p className="splash-text">Growing Sustainably, Living Naturally</p>
+                    <p className="splash-text">From Our Farm to Your Family</p>
+            </div>
+        </div>
+    );
+};
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 10000); // 10 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    // <ChatArea />
     <Provider store={store}>
       <div style={{ position: "relative" }}>
         <Toaster position="top-center" reverseOrder={false} />
 
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/signin" element={<SignIn />}></Route>
-            <Route path="/register" element={<Register />}></Route>
-            <Route
-              path="/:resortId/:roomType/:roomId/details"
-              element={<ViewRoomDetails />}
-            />
-            <Route path="/rating-form/:resortId" element={<RatingForm />}>
-              {" "}
-            </Route>
-            <Route path="/my-bookings" element={<MyBookings />}>
-              {" "}
-            </Route>
-            <Route path="/aboutus" element={<About />}></Route>
-            <Route
-              path="/booking-summary/:resortname/:id"
-              element={<BookingPage />}
-            ></Route>
-            <Route path="/gallery" element={<Gallary />}></Route>
-            <Route path="/events" element={<EventPage />}></Route>
-            <Route path="/spa" element={<Spa />}></Route>
-            <Route path="/our-properties" element={<OurProperties />}></Route>
-            <Route
-              path="/:resortname/:id/rooms"
-              element={<ViewDetails />}
-            ></Route>
-            <Route
-              path="/:resortname/:id/rooms-table"
-              element={<RoomTable />}
-            ></Route>
-            <Route path="/spa-details/:spaId" element={<SpaDetails />}></Route>
-            <Route path="/contactus" element={<ContactUs />}></Route>
-            <Route
-              path="/terms-conditions"
-              element={<TermsConditions />}
-            ></Route>
+        {showSplash ? (
+          <SplashScreen />
+        ) : (
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/register" element={<Register />} />
+              <Route
+                path="/:resortId/:roomType/:roomId/details"
+                element={<ViewRoomDetails />}
+              />
+              <Route path="/rating-form/:resortId" element={<RatingForm />} />
+              <Route path="/my-bookings" element={<MyBookings />} />
+              <Route path="/aboutus" element={<About />} />
+              <Route
+                path="/booking-summary/:resortname/:id"
+                element={<BookingPage />}
+              />
+              <Route path="/gallery" element={<Gallary />} />
+              <Route path="/events" element={<EventPage />} />
+              <Route path="/spa" element={<Spa />} />
+              <Route path="/our-properties" element={<OurProperties />} />
+              <Route path="/:resortname/:id/rooms" element={<ViewDetails />} />
+              <Route
+                path="/:resortname/:id/rooms-table"
+                element={<RoomTable />}
+              />
+              <Route path="/spa-details/:spaId" element={<SpaDetails />} />
+              <Route path="/contactus" element={<ContactUs />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/servies" element={<FarmServices />} />
+              <Route path="/guestex" element={<BentoGuestPage />} />
+              {/* Things to do */}
+              <Route path="/north-goa" element={<NorthGoa />} />
+              <Route path="/south-goa" element={<SouthGoa />} />
+              <Route path="/activity" element={<Activity />} />
+              <Route path="/" element={<Wedding />} />
+              <Route
+                path="/wedding-venue-details/:resortID/:resortName"
+                element={<WeddingDetails />}
+              />
+              <Route path="/chat" element={<ChatArea />} />
 
-            {/* things to do */}
-            <Route path="/north-goa" element={<NorthGoa />}></Route>
-            <Route path="/south-goa" element={<SouthGoa />}></Route>
-            <Route path="/activity" element={<Activity />}></Route>
-            <Route path="/activity" element={<Activity />}></Route>
-            <Route path="/destination-wedding" element={<Wedding />}></Route>
-            <Route
-              path="/wedding-venue-details/:resortID/:resortName"
-              element={<WeddingDetails />}
-            ></Route>
-            <Route path="/chat" element={<ChatArea />}></Route>
-          </Route>
-        </Routes>
+              <Route path="/payment" element={<Payment />} />
+            </Route>
+          </Routes>
+        )}
       </div>
     </Provider>
   );

@@ -5,16 +5,16 @@
   bottom: 1.4rem;
   padding: 0.6rem;
   border-radius: 100%;
-  background-color: #3376b0;
+  background-color: #72e762;
   z-index: 4;
 }
 
 .open_chat_icon {
   color: #fff;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .chat_redirect:hover {
-  background-color: #62baea;
+  background-color: #62ea8b;
 }

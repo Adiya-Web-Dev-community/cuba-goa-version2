@@ -17,7 +17,7 @@ const ContactUs = () => {
         window.scrollTo(0, 0);
         // eslint-disable-next-line
     }, [])
-    const [contactUsForm, setContactUsForm] = useState({ firstName: "", lastName: "", email: "", contact: "", yourOrganization: "", message: "" })
+    const [contactUsForm, setContactUsForm] = useState({ firstName: "",  email: "", contact: "",  message: "" })
     const handleContactUsForm = (params) => (e) => {
         setContactUsForm({ ...contactUsForm, [params]: e.target.value })
     }
@@ -59,11 +59,11 @@ const ContactUs = () => {
             <main className='main-contact'>
 
                 <section>
-                    <h2>Contact Cuba Goa - Beach Huts, Bungalows & Resorts</h2>
-                    <h5 style={{ marginBottom: '60px' }}>BAGA | AGONDA | PALOLEM | PATNEM</h5>
+                    <h2>Contact Mayi Farms - Perfect Farm Stays</h2>
+                    <h5 style={{ marginBottom: '60px' }}></h5>
 
 
-                    {allProperties.map((el, i) => (
+                    {/* {allProperties.map((el, i) => (
                         <div className='beach-location' key={i + 1}>
                             <div className='beach-location-map'>
                                 <iframe src={mapUrl} style={{ height: '100%', width: '100%' }} title='resortMap' ></iframe>
@@ -73,18 +73,15 @@ const ContactUs = () => {
                                 <p>{el.resortAddress}</p>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
 
                     <div className='contact-info'>
                         <form onClick={(e) => e.preventDefault()} className='contact-form'>
                             <div className='inputbox'>
-                                <label htmlFor='firstname'>First Name</label>
-                                <input id='firstname' placeholder='Enter your first name' type='text' onChange={handleContactUsForm('firstName')} value={contactUsForm.firstName} />
+                                <label htmlFor='firstname'>Name</label>
+                                <input id='firstname' placeholder='Enter your  name' type='text' onChange={handleContactUsForm('firstName')} value={contactUsForm.firstName} />
                             </div>
-                            <div className='inputbox'>
-                                <label for='lastname'>Last Name</label>
-                                <input id='lastname' type='text' placeholder='Enter your Last Name' onChange={handleContactUsForm('lastName')} value={contactUsForm.lastName} />
-                            </div>
+                           
                             <div className='inputbox'>
                                 <label htmlFor='email'>Email </label>
                                 <input id='email' type='email' placeholder='Enter your email' onChange={handleContactUsForm('email')} value={contactUsForm.email} />
@@ -93,10 +90,7 @@ const ContactUs = () => {
                                 <label htmlFor='contact'>Contact</label>
                                 <input id='contact' type='number' placeholder='Enter your contact number' onChange={handleContactUsForm('contact')} value={contactUsForm.contact} />
                             </div>
-                            <div className='inputbox'>
-                                <label htmlFor='organization'>Your Organization (if any)</label>
-                                <input id='organization' type='text' placeholder='Enter your  Organization ' onChange={handleContactUsForm('yourOrganization')} value={contactUsForm.yourOrganization} />
-                            </div>
+                           
                             <div className='inputbox'>
                                 <label htmlFor='message'>Message</label>
                                 <textarea id='message' className='Message' placeholder='Enter your message' onChange={handleContactUsForm('message')} value={contactUsForm.message} />
@@ -104,8 +98,8 @@ const ContactUs = () => {
                             <button type='submit' onClick={SubmitContactUsForm}>Submit</button>
                         </form>
                         <div className='contact-info-of'>
-                            <p><span>Phone Number:-</span> (976) 444-2775 / 78</p>
-                            <p><span>Email:-</span> info@cubagoa.com</p>
+                            <p><span>Phone Number:-</span>  954-954-9904</p>
+                            <p><span>Email:-</span> hello@mayifarms.com</p>
                             <p><span>Hours Of Operation:-</span> 24/7</p>
                             <p><span>Timings:- </span>9 AM to 7 PM. Everyday</p>
 

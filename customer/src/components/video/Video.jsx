@@ -8,7 +8,8 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 // import homeVideo from "../../assets/HomeVideo.mp4";
 // import homeVideo from "../../assets/homeVideo2.mp4";
-import homeVideo from "../../assets/home_3.mp4";
+// import homeVideo from "../../assets/home_3.mp4";
+import home_image from "../../assets/exterior-1597098_1280.jpg";
 
 //image
 import resortImage from "../../assets/palolemImg.png";
@@ -32,12 +33,21 @@ const Video = ({ issearchBox }) => {
 
   return (
     <div className="main">
-      <div className="drop_shadow">
+      {/* <div className="drop_shadow">
         <video
           src={homeVideo}
           autoPlay
           loop
           muted
+          data-aos="flip-left"
+          data-aos-delay="600"
+          data-aos-easing="ease-in-out"
+        />
+      </div> */}
+
+      <div className="drop_shadow">
+        <img src={home_image}
+          
           data-aos="flip-left"
           data-aos-delay="600"
           data-aos-easing="ease-in-out"

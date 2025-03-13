@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = ({ showLogin, setShowLogin }) => {
 
-    const [regForm, setRegForm] = useState({ username: "", email: "", password: "" })
+    const [regForm, setRegForm] = useState({ name: "", email: "", password: "" })
     const [err, setErr] = useState("")
     const handleRegForm = (params) => (e) => {
         setRegForm({ ...regForm, [params]: e.target.value })
@@ -19,7 +19,7 @@ const Register = ({ showLogin, setShowLogin }) => {
 
     const submitRegister = async (e) => {
         e.preventDefault()
-        if (!regForm.username || !regForm.email || !regForm.password) {
+        if (!regForm.name || !regForm.email || !regForm.password) {
             return toast.error("All the fields are Mandatory!")
         }
         await axios.post('/register', regForm)
@@ -76,7 +76,7 @@ const Register = ({ showLogin, setShowLogin }) => {
             }}>
                 <h3>REGISTER</h3>
                 <div>
-                    <input type='text' className='login-inputs' placeholder='username' onChange={handleRegForm('username')}/>
+                    <input type='text' className='login-inputs' placeholder='name' onChange={handleRegForm('name')}/>
                 </div>
                 <div>
                     <input type='email' className='login-inputs' placeholder='email' onChange={handleRegForm('email')} />

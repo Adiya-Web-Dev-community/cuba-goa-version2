@@ -9,9 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaAlignJustify } from "react-icons/fa";
 import { Icon } from "react-icons-kit";
 import { cross } from "react-icons-kit/icomoon/cross";
-import cubaGoaLogo from "../../assets/logocubagoa.png";
+import cubaGoaLogo from "../../assets/Screenshot_2025-01-30_175934-removebg-preview.png";
 import axios from "../../helpers/axios";
-
 import { toast } from "react-hot-toast";
 
 //big screen navbar icon
@@ -162,31 +161,88 @@ const Header = ({ auth, setAuth }) => {
             <img
               src={cubaGoaLogo}
               alt="cuba-goa-logo"
-              style={{ width: "6rem", height: "3rem" }}
+              style={{ width: "8rem", height: "4rem" }}
             />
           </Link>
         </section>
         <FaAlignJustify className="sidebar_icon" />
       </div>
       {/* Desktop Navbar */}
+
       <div className="desktop_section">
-        {/* <div className="main_header"> */}
+        {/* Logo Section */}
+        <div className="logo-wrapper">
+          <div className="logo-container">
+            {/* <div className="background-shape">
+              <svg viewBox="0 0 400 200" preserveAspectRatio="none">
+                <path
+                  d="M20,50 
+                 C50,30 100,20 150,25 
+                 C200,30 240,40 300,35 
+                 C350,30 360,20 380,50 
+                 C380,80 390,120 350,140 
+                 C310,160 240,165 200,160 
+                 C150,155 100,165 50,150 
+                 C0,135 -10,70 20,50 Z"
+                  className="shape-path"
+                />
+              </svg>
+            </div> */}
+            <section className="appbar_col_2">
+              <Link to={"/"}>
+                <img
+                  src={cubaGoaLogo}
+                  alt="cuba-goa-logo"
+                  style={{ width: "12.8rem", height: "5.8rem" }}
+                />
+              </Link>
+            </section>
+          </div>
+        </div>
+
+        {/* Centered Navigation Links */}
         <section className="appbar_col_1">
           <Link to={"/"} className="nav_link nav_header_2">
-            {/* <MdHome className="header_icon" /> */}
             Home
           </Link>
-
           <Link className="nav_link nav_header_2 available" to={"/spa"}>
-            {/* <FaSpa className="header_icon" /> */}
-            Spa
+            Farm Houses
           </Link>
-          <div
+
+          <Link className="nav_link nav_header_2" to={"/gallery"}>
+            {/* <RiGalleryFill className="header_icon" /> */}
+            Top Listings
+          </Link>
+          <Link to={"/aboutus"} className="nav_link nav_header_2">
+            {/* <MdSmsFailed className="header_icon" /> */}
+            {/* TESTIMONIALS */}
+            AboutUs
+          </Link>
+
+          <Link to={"/servies"} className="nav_link ">
+            {/* <RiContactsFill className="header_icon" /> */}
+            Services 
+          </Link>
+
+          
+          {/* Contact Us */}
+          <Link to={"/contactus"} className="nav_link ">
+            {/* <RiContactsFill className="header_icon" /> */}
+            Contact Us
+          </Link>
+          <Link to={"/guestex"} className="nav_link nav_header_2">
+            Gest Experience
+          </Link>
+
+          
+
+          
+          {/* <div
             className="drop_more"
             onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}
           >
-            <div className="dropDown_container">More Services</div>
+            <div className="dropDown_container">SERVICES</div>
             <IoIosArrowDown
               className={`${isVisible ? "drop_Icon_open" : "drop_Icon"}`}
             />
@@ -200,177 +256,113 @@ const Header = ({ auth, setAuth }) => {
                   }}
                 >
                   <div className="more_content resturant">
-                    <p className="more_heading">Our Restaurant</p>
+                    <p className="more_heading">Farm space</p>
                     <ul className="list_container">
                       {allProperties
-                        .filter((restaurant) => {
-                          if (restaurant.type === "restaurant") {
-                            return restaurant;
-                          }
-                        })
-                        .map((property, index) => {
-                          return (
-                            <li
-                              className="list_item"
-                              key={property._id}
-                              onClick={() =>
-                                viewRooms(property._id, property.resortName)
-                              }
-                            >
-                              {property.resortName}
-                            </li>
-                          );
-                        })}
+                        .filter(
+                          (restaurant) => restaurant.type === "restaurant"
+                        )
+                        .map((property) => (
+                          <li
+                            className="list_item"
+                            key={property._id}
+                            onClick={() =>
+                              viewRooms(property._id, property.resortName)
+                            }
+                          >
+                            {property.resortName}
+                          </li>
+                        ))}
                     </ul>
                   </div>
-                  <div className="more_content  hotel">
-                    <p className="more_heading">Our Hotels</p>
+                  <div className="more_content hotel">
+                    <p className="more_heading">Food catering</p>
                     <ul className="list_container">
                       {allProperties
-                        .filter((resort) => {
-                          if (resort.type === "resort") {
-                            return resort;
-                          }
-                        })
-                        .map((property, index) => {
-                          return (
-                            <li
-                              className="list_item"
-                              key={property._id}
-                              onClick={() => {
-                                viewRooms(property._id, property.resortName);
-                              }}
-                            >
-                              {property.resortName}
-                            </li>
-                          );
-                        })}
-                      {/* <li>Palolem Beach Resort</li>
-                    <li>Cuba Patnem</li>
-                    <li>Cuba Agonda</li> */}
+                        .filter((resort) => resort.type === "resort")
+                        .map((property) => (
+                          <li
+                            className="list_item"
+                            key={property._id}
+                            onClick={() => {
+                              viewRooms(property._id, property.resortName);
+                            }}
+                          >
+                            {property.resortName}
+                          </li>
+                        ))}
                     </ul>
                   </div>
                   <div className="more_content things">
                     <p className="more_heading">Things to Do</p>
-
                     <ul className="list_container">
-                      {thingstodo.map((activity, index) => {
-                        return (
-                          <li
-                            className="list_item"
-                            key={activity.id}
-                            onClick={() => {
-                              navigate(`${activity.pagelink}`);
-                            }}
-                          >
-                            {activity.activity}
-                          </li>
-                        );
-                      })}
+                      {thingstodo.map((activity) => (
+                        <li
+                          className="list_item"
+                          key={activity.id}
+                          onClick={() => {
+                            navigate(`${activity.pagelink}`);
+                          }}
+                        >
+                          {activity.activity}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
                 <div className="more_bottom">
-                  {/* DESTINATION WEDDINGS */}
                   <Link className="more_link" to={"/destination-wedding"}>
-                    {/* <MdLocalFlorist className="sidenav_icon" /> */}
                     Destination Weddings
                   </Link>
-
                   <Link className="isAvailabe" to={"/spa"}>
-                    {/* <FaSpa className="header_icon" /> */}
-                    Spa
+                    Form House
                   </Link>
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
         </section>
 
-        <section className={`appbar_col_2`}>
-          {/* Logo */}
-
-          <Link to={"/"}>
-            <img
-              src={cubaGoaLogo}
-              alt="cuba-goa-logo"
-              style={{ width: "6.8rem", height: "4.8rem" }}
-            />
-          </Link>
-        </section>
-
-        <section className="appbar_col-3">
-          <Link className="nav_link nav_header_2" to={"/gallery"}>
-            {/* <RiGalleryFill className="header_icon" /> */}
-            Gallery
-          </Link>
-          <Link to={"/aboutus"} className="nav_link nav_header_2">
-            {/* <MdSmsFailed className="header_icon" /> */}
-            About Us
-          </Link>
-          {/* Contact Us */}
-          <Link to={"/contactus"} className="nav_link ">
-            {/* <RiContactsFill className="header_icon" /> */}
-            Contact Us
-          </Link>
-        </section>
-        <section className="appbar_col-4">
-          <div className="dropdown header_drop ">
-            {/* <CgMenuRight className="header_icon" /> */}
-            <div className="dropdown_content">
-              <button
-                className="dropdown-toggle dropdown_nav"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                {/* MENU */}
-                Get Started
-              </button>
-              <div className="dropdown-menu">
-                {auth ? (
-                  <div>
-                    <Link
-                      className="auth"
-                      to={"/"}
-                      onClick={() => {
-                        localStorage.clear("user");
-                        handleCloseNavbar();
-
-                        toast.success("Logged out successfully");
-                      }}
-                    >
-                      Logout
-                    </Link>
-                  </div>
-                ) : (
-                  <div>
-                    <Link
-                      className="auth"
-                      to={"/signin"}
-                      // onClick={() => {
-                      //   navigate("/signin");
-                      //   handleCloseNavbar();
-                      // }}
-                    >
-                      Login
-                    </Link>
-                  </div>
-                )}
-                {auth ? (
+        {/* Right Section - Get Started */}
+       <section className="appbar_col_4">
+          <div className="dropdown header_drop">
+            <button
+              className="dropdown-toggle dropdown_nav"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Get Started
+            </button>
+            <div className="dropdown-menu">
+              {auth ? (
+                <div>
                   <Link
-                    to={"/my-booking"}
-                    // onClick={() => {
-                    //   navigate("/my-bookings");
-                    //   handleCloseNavbar();
-                    // }}
+                    className="auth"
+                    to={"/"}
+                    onClick={() => {
+                      localStorage.clear("user");
+                      handleCloseNavbar();
+                      toast.success("Logged out successfully");
+                    }}
                   >
-                    my bookings
+                    Logout
                   </Link>
-                ) : null}
-              </div>
+                </div>
+              ) : (
+                <div className="login">
+                  <Link className="auth" to={"/signin"}>
+                    Login
+                  </Link>
+
+                  <Link className="auth" to={"/signin"}>
+                   Sign in
+                  </Link>
+                </div>
+              )}
+              {auth && <Link to={"/my-booking"}>My Bookings</Link>}
             </div>
           </div>
         </section>
@@ -429,7 +421,7 @@ const Header = ({ auth, setAuth }) => {
                         aria-expanded="false"
                       >
                         {/* OUR HOTELS */}
-                        Our Hotels
+                        Our Farm
                       </button>
                       {/* </div> */}
                       <div className="dropdown-menu">
@@ -480,7 +472,7 @@ const Header = ({ auth, setAuth }) => {
                         aria-expanded="false"
                       >
                         {/* OUR RESTAURANTS */}
-                        Our Restaurants
+                        Our Farm
                       </button>
                       <div className="dropdown-menu">
                         {allProperties
@@ -544,12 +536,12 @@ const Header = ({ auth, setAuth }) => {
                   <Link to={"/spa"} className="side_link">
                     {/* SPA */}
                     <FaSpa className="sidenav_icon" />
-                    Spa
+                    Farm Houses
                   </Link>
                   <Link to={"/gallery"} className="side_link">
                     {/* GALLERY */}
                     <RiGalleryFill className="sidenav_icon" />
-                    Gallery
+                    Top Listings
                   </Link>
                   <Link to={"/contactus"} className="side_link">
                     <RiContactsFill className="sidenav_icon" />
@@ -588,10 +580,10 @@ const Header = ({ auth, setAuth }) => {
                           <div>
                             <Link
                               to={"/signin"}
-                              // onClick={() => {
-                              //   navigate("/signin");
-                              //   handleCloseNavbar();
-                              // }}
+                              onClick={() => {
+                                navigate("/signin");
+                                handleCloseNavbar();
+                              }}
                             >
                               Login
                             </Link>
@@ -600,10 +592,10 @@ const Header = ({ auth, setAuth }) => {
                         {auth ? (
                           <Link
                             to={"/my-booking"}
-                            // onClick={() => {
-                            //   navigate("/my-bookings");
-                            //   handleCloseNavbar();
-                            // }}
+                            onClick={() => {
+                              navigate("/my-bookings");
+                              handleCloseNavbar();
+                            }}
                           >
                             <p>my bookings</p>
                           </Link>

@@ -9,7 +9,7 @@ ul.footer-ul {
 }
 
 .footer-section {
-    background: #012030;
+    background: #191919;
     position: relative;
 }
 
@@ -63,6 +63,11 @@ ul.footer-ul {
 
 .footer-logo img {
     max-width: 200px;
+}
+.WhatsApp{
+    color:greenyellow;
+   
+
 }
 
 .footer-text p {

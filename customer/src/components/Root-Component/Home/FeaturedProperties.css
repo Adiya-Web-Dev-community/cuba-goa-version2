@@ -1,158 +1,254 @@
-.card {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: space-between;
-  border: none;
-  margin: 20px;
-  padding: 20px;
-  /* width: 300px; */
-
-  background-color: transparent;
-  /* transition: transform 0.5s ease-in-out; */
+/* Base container styles */
+.properties-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* @keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
+/* Responsive grid breakpoints */
+@media (min-width: 640px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
   }
-} */
-
-/* .card:hover {
-  transform: scale(1.05);
-} */
-
-.img-wrap1 {
-  /* overflow: hidden; */
-  border-radius: 8px;
 }
 
-.imagetag {
-  width: 500px;
-  height: 400px;
-
-  display: block;
-  border-radius: 20px;
-  /* background-position:; */
-
-  /* transition: opacity 0.5s ease-in-out; */
+@media (min-width: 1280px) {
+  .properties-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.content {
-  text-align: start;
-  background-color: transparent;
-  margin-left: 20px;
-}
-.property_name {
-  text-align: center;
+/* Property card styles */
+.property-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  width: 100%;
 }
 
-.button-wrap {
+@media (min-width: 640px) {
+  .property-card {
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .property-card {
+    border-radius: 24px;
+  }
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Card image container */
+.card-images {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio for mobile */
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .card-images {
+    padding-top: 66.67%; /* 3:2 aspect ratio for larger screens */
+  }
+}
+
+.image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Category badge */
+.category {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 640px) {
+  .category {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 20px;
+  }
+}
+
+/* Card content */
+.card-contents {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card-contents {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-contents {
+    padding: 1.5rem;
+  }
+}
+
+.card-contents h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+@media (min-width: 640px) {
+  .card-contents h3 {
+    font-size: 1.25rem;
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-contents h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.card-contents p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .card-contents p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-contents p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* View rooms button */
+.view-rooms-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* margin-top: 15px; */
+  gap: 0.375rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #ff385c;
+  font-weight: 500;
+  font-size: 0.875rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* .button-wrap p {
-  color: red;
-  margin-right: 5px;
-} */
-
-.button-wrap img {
-  width: 20px;
-  height: auto;
-}
-.loaded {
-  filter: blur(0px);
-  transition: filter 0.4s linear;
+@media (min-width: 640px) {
+  .view-rooms-btn {
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+  }
 }
 
-.loading {
-  filter: blur(10px);
-  clip-path: inset(0);
+@media (min-width: 1024px) {
+  .view-rooms-btn {
+    font-size: 1rem;
+  }
 }
 
-.icon_content {
-  margin: 0;
-  margin-right: 5px;
+.view-rooms-btn:hover {
+  transform: translateX(4px);
+}
+
+.view-rooms-btn .icon {
   font-size: 1rem;
 }
 
-.icon_room {
-  width: 1rem;
-  height: 1rem;
-  cursor: pointer;
-}
-
-/* .card {
-  transform: translateY(-150%);
-  opacity: 0;
-} */
-
-/* .slide-in {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-} */
-
-@media only screen and (max-width: 990px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;
-    padding-top: 0px;
-  }
-
-  .content {
-    text-align: start;
-    background-color: transparent;
-    margin: 20px 0 0 0;
-  }
-
-  .imagetag {
-    /* display: flex; */
-    /* flex-basis: auto; */
-    width: 27rem;
-    height: 12.5rem;
-    display: block;
-    border-radius: 10px;
-    /* background-position:; */
-
-    /* transition: opacity 0.5s ease-in-out; */
-  }
-
-  .property_name {
-    font-size: 1.2rem;
-  }
-  .property_des {
-    font-size: 0.8rem;
-  }
-
-  .icon_content {
-    margin: 0;
-    margin-right: 5px;
-    font-size: 0.6rem;
-  }
-
-  .icon_room {
-    width: 0.6rem;
-    height: 0.6rem;
+@media (min-width: 640px) {
+  .view-rooms-btn .icon {
+    font-size: 1.125rem;
   }
 }
 
-@media only screen and (max-width: 468px) {
-  .imagetag {
-    width: 18rem;
-    height: 12.5rem;
-    display: block;
-    border-radius: 10px;
+@media (min-width: 1024px) {
+  .view-rooms-btn .icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .property-card:hover {
+    transform: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  .property-card:hover .image-wrapper {
+    transform: none;
+  }
+  
+  .overlay {
+    opacity: 0.3;
+  }
+  
+  .property-card:hover .overlay {
+    opacity: 0.3;
   }
 }

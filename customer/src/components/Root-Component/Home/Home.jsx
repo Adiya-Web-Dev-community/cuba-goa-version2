@@ -41,6 +41,14 @@ import { IoIosArrowDown, IoIosChatbubbles } from "react-icons/io";
 import { IoLogoSnapchat } from "react-icons/io5";
 import ChatOpeningButton from "../Chat/ChatOpeningButton";
 
+import ListingsPage from "./ListingsPage";
+
+import Testimonials from "./Testimonials";
+
+import FarmDeals from "./FarmDeals";
+import TravelCarousel from "./TravelCarousel";
+import WhatsAppIcon from './../../whatsapp/whatsapp';
+
 const Home = () => {
   const [allProperties, setAllProperties] = useState([]);
   const [isLoading, setLoading] = useState("");
@@ -55,6 +63,9 @@ const Home = () => {
   const [checkoutdate, setCheckoutdate] = useState("");
 
   const [isDropDown, setDropDown] = useState(false);
+  const [tooltipText, setTooltipText] = useState('');
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
 
   // const viewRooms = (id, resortname) => {
   //   navigate(`/${resortname}/${id}/rooms`);
@@ -215,53 +226,54 @@ const Home = () => {
     }
   };
 
-  // console.log(resortImages);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [tooltipInfo, setTooltipInfo] = useState({ visible: false, text: '', position: { top: 0, left: 0 } });
+  const dropdownRef = useRef(null);
 
-  // const config = {
-  //   rootMargin: "1000px",
-  //   threshold: 0.8,
-  // };
+  const options = [
+    { id: 'farm-stay', label: 'Farm Stay', description: 'Comfortable stays for relaxation' },
+    { id: 'corporate', label: 'Corporate', description: 'Corporate retreats and meetings' },
+    { id: 'short-stay', label: 'Short stay', description: 'Perfect for short weekend getaways' },
+    { id: 'occasion', label: 'Occasion', description: 'Celebrate your special occasions' },
+    { id: 'holiday', label: 'Holiday', description: 'Relaxing holiday experiences' }
+  ];
 
-  // const loadingImgHandler = (image) => {
-  //   image.src = image.dataset.src;
-  // };
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
-  // useEffect(() => {
-  // const observer = new window.IntersectionObserver((entries, self) => {
-  // console.log(entries, "entries");
-  // entries.forEach((entry) => {
-  // setIsIntersecting(entry.isIntersecting);
-  // if (entry.isIntersecting) {
-  // loadingImgHandler(entry.target);
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+    // setIsOpen(false);
+  };
 
-  // self.unobserve(entry.target);
-  //   }
-  // });
-  // }, config);
-  // const resortImages = document.querySelectorAll("[data-src]");
-  // const ref = document.getElementById("card");
-  // if (isIntersecting) {
-  //   ref.current.querySelectorAll(".di").forEach((el) => {
-  //     el.classList.add("slide-in");
-  //   });
-  // } else {
-  //   ref.current.querySelectorAll("div").forEach((el) => {
-  //     el.classList.remove("slide-in");
-  //   });
-  // }
-  //   console.log(resortImages);
-  //   resortImages.forEach((imgURL) => {
-  //     // console.log(imgURL);
+  const handleMouseEnter = (e, description) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setTooltipInfo({
+      visible: true,
+      text: description,
+      position: {
+        top: rect.top + window.scrollY,
+        left: rect.right + window.scrollX + 10 // Position to the right of the option
+      }
+    });
+  };
 
-  //     observer.observe(imgURL);
-  //   });
+  const handleMouseLeave = () => {
+    setTooltipInfo({ ...tooltipInfo, visible: false });
+  };
 
-  //   return () => {
-  //     resortImages.forEach((imgURL) => {
-  //       observer.unobserve(imgURL);
-  //     });
-  //   };
-  // }, [loadingImgHandler]);
 
   const handleCouponSubmit = async () => {
     // console.log(email);
@@ -282,7 +294,7 @@ const Home = () => {
     <div className="home-wrap">
       <div className="banner">
         <h2 className="banner_text">
-          Travel Smart, Stay Brilliant, Value-Fueled Experiences Await
+          Reconnect with Nature, Recharge <br /> Your Soul
         </h2>
         {/* <div className="">
           <div>Contact Now</div>
@@ -314,8 +326,47 @@ const Home = () => {
                   </option>
                 );
               })}
+                
             </select> */}
-            <div className="select_drop" onClick={() => showDropDownhandler()}>
+           
+    <div className="custom-dropdown-container" ref={dropdownRef}>
+      <div 
+        className="dropdown-header" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {selectedOption ? selectedOption.label : 'Select an option'}
+        <span className="dropdown-arrow">{isOpen ? '▲' : '▼'}</span>
+      </div>
+      
+      {isOpen && (
+        <div className="dropdown-options">
+          {options.map(option => (
+            <div 
+              key={option.id}
+              className="dropdown-option" 
+              onClick={() => handleSelect(option)}
+              onMouseEnter={(e) => handleMouseEnter(e, option.description)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {tooltipInfo.visible && (
+        <div 
+          className="option-tooltip"
+          style={{
+            top: `${tooltipInfo.position.top}px`,
+            left: `${tooltipInfo.position.left}px`
+          }}
+        >
+          {tooltipInfo.text}
+        </div>
+      )}
+    </div>
+            {/* <div className="select_drop" onClick={() => showDropDownhandler()}>
               <input
                 type="text"
                 className="select_resort"
@@ -352,8 +403,8 @@ const Home = () => {
                   );
                 })}
               </ol>
-            )}
-          </div>
+            )} */}
+            </div> 
 
           <div className="dates_container">
             <div className="containt_wraper">
@@ -426,10 +477,18 @@ const Home = () => {
         <HomeList currentList={currentList} />
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
-      <div className="home-content">
+
+      <ListingsPage />
+      {/* <HotelListing/>
+      <BookingPreview/> */}
+      <TravelCarousel />
+      <FarmDeals />
+      <Testimonials />
+
+      {/* <div className="home-content">
         <div className="content-wrapper" data-aos="zoom-in" data-aos-delay="60">
           <h6>
-            Discover CUBA GOA, a prestigious collection of independent luxury
+            Discover Mayi Farms , a prestigious collection of independent luxury
             hotels in the alluring area of Goa, India. Discover a world of
             unrivalled luxury and hospitality. Check out our beautiful
             properties right away!
@@ -455,12 +514,19 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="">
-        <h2 style={{ textAlign: "center", marginTop: "2rem" }}>
-          Featured Properties
-        </h2>
+        <div className="headers">
+          <div className="monthly-tag">
+            Farms Featured <span className="line"></span>
+          </div>
+          <h1 className="title">Featured Properties</h1>
+          <p className="description">
+            our forms houes offers a variety of experience
+          </p>
+        </div>
+
         <div
           style={{
             border: "0.2px solid lightgrey",
@@ -529,7 +595,7 @@ const Home = () => {
           <div style={{ display: "none" }}>
             <Icon icon={location2} size={30} style={{ color: "orange" }}></Icon>
           </div>
-          <h3 style={{}}>Cuba Goa Property Locations</h3>
+          <h3 style={{}}>Mayi Farms Property Locations</h3>
         </div>
         <div className="dummy-border"></div>
 
@@ -579,7 +645,7 @@ const Home = () => {
                   style={{ width: "150px", height: "70px" }}
                   alt=""
                 /> */}
-                Cuba
+                Mayi Farms
               </h2>
               <h4 className="modal_containt_header">Welcome Back!</h4>
               <p className="modal_main_containt">
@@ -610,12 +676,18 @@ const Home = () => {
         </Box>
       </Modal>
 
-      <button className="button__loader">
+      {/* <button className="button__loader">
         <span className="button__text">Become a member</span>
-      </button>
+      </button> */}
       <Footer />
 
-      <ChatOpeningButton />
+      <WhatsAppIcon
+      
+        phoneNumber="9549549904"  // Replace with your phone number
+        message="Hello! I'm interested in your services."  // Optional pre-filled message
+        position="right"  // 'right' or 'left'
+        animated={true}  // Enable/disable pulsing animation
+      />
     </div>
   );
 };

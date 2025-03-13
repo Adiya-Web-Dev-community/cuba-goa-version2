@@ -1,0 +1,148 @@
+.deals-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .deals-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .weekend-label {
+    color: #1a365d;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .weekend-label::after {
+    content: "—";
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+  
+  .deals-title {
+    font-size: 2.5rem;
+    color: #1a202c;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+  }
+  
+  .deals-description {
+    color: #4a5568;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .farm-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .farm-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .farm-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .farm-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .farm-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .farm-card:hover .farm-image img {
+    transform: scale(1.05);
+  }
+  
+  .farm-details {
+    padding: 1.5rem;
+  }
+  
+  .price-section {
+    margin-bottom: 1rem;
+  }
+  
+  .original-price {
+    color: #e53e3e;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  
+  .discounted-price {
+    color: #2c5282;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .stay-duration {
+    color: #718096;
+    font-size: 0.9rem;
+  }
+  
+  .farm-name {
+    color: #1a202c;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+  
+  .farm-location {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rating-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .star-icon {
+    color: #f6ad55;
+  }
+  
+  .rating {
+    color: #2d3748;
+    font-weight: 600;
+  }
+  
+  .reviews {
+    color: #718096;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .deals-container {
+      padding: 1rem;
+    }
+  
+    .deals-title {
+      font-size: 2rem;
+    }
+  
+    .farm-listings {
+      grid-template-columns: 1fr;
+    }
+  }

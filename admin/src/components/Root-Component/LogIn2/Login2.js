@@ -132,10 +132,10 @@ const Login2 = ({ showLogin, setShowLogin }) => {
             </span>
           </button>
         </div>
-        {/* <p className="already-have-an-account">
+        <p className="already-have-an-account">
           Don't have an account?
           <span className='regiser-span' onClick={() => setShowLogin(false)}> register</span>
-        </p> */}
+        </p>
       </form>
     </section>
   );

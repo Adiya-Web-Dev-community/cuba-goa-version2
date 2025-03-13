@@ -1,0 +1,345 @@
+.listings-container {
+  padding: 7rem;
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f1f9 100%);
+  min-height: 100vh;
+  
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.listings-title {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin: 0;
+  background: linear-gradient(to right, #92fa1bfc#b7fa61e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.navigation-controls {
+  display: flex;
+  
+  
+  
+  
+}
+
+.nav-buttons-horizontal {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2c5282;
+}
+
+.nav-buttons:hover {
+  background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-buttons:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #edf2f7;
+  color: #a0aec0;
+  transform: none;
+}
+
+.slider-outer {
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.slider-container {
+  display: flex;
+  
+
+  gap: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.listings-container {
+  padding: 1rem;
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f1f9 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .listings-container {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listings-container {
+    padding: 7rem;
+  }
+}
+
+.headers {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.monthly-tag {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+.slider-outer {
+  overflow: hidden;
+  padding: 1rem;
+  cursor: grab;
+}
+
+.slider-outer:active {
+  cursor: grabbing;
+}
+
+.slider-container {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  user-select: none;
+}
+
+.listing-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .listing-card {
+    flex: 0 0 calc(50% - 0.5rem) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listing-card {
+    flex: 0 0 calc(33.333% - 0.667rem) !important;
+  }
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.nav-buttons-horizontal {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2c5282;
+}
+
+.nav-buttons:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.listing-card {
+  flex: 0 0 calc(33.333% - 1.33rem);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.listing-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.listing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.listing-card:hover .listing-image img {
+  transform: scale(1.05);
+}
+
+.listing-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.listing-content {
+  padding: 1.5rem;
+}
+
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.listing-info h2 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-weight: 700;
+  color: #2c5282;
+  font-size: 1.1rem;
+}
+
+.features-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #2c5282;
+  font-weight: 500;
+}
+
+.btn-grad {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #76c220fc,#b7fa61e1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-grad:hover {
+  background: linear-gradient(to right, #93f226fc,#b7fa61e1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(44, 82, 130, 0.2);
+}
+
+/* Keep your existing modal styles but add these updates */
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+.submit-booking {
+  background: linear-gradient(to right, #2c5282, #4299e1);
+  border-radius: 12px;
+  padding: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.submit-booking:hover {
+  background: linear-gradient(to right, #254b78, #3182ce);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(44, 82, 130, 0.2);
+}
