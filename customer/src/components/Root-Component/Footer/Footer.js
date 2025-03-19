@@ -100,11 +100,12 @@ const Footer = () => {
                       navigate("/");
                     }}
                   >
-                    Home
+                    HOME
                   </li>
                   <li
                     onClick={() => {
-                      navigate("/our-properties");
+                      // navigate("/our-properties");
+                      navigate("/spa");
                     }}
                   >
                     FARM HOUSES{" "}
@@ -118,24 +119,24 @@ const Footer = () => {
                   </li>
                   <li
                     onClick={() => {
-                      navigate("/events");
+                      navigate("/aboutus");
                     }}
                   >
                     ABOUT US
                   </li>
                   <li
                     onClick={() => {
-                      navigate("/gallery");
+                      navigate("/servies");
                     }}
                   >
                     SERVICES
                   </li>
                   <li
                     onClick={() => {
-                      navigate("/aboutus");
+                      navigate("/events");
                     }}
                   >
-                    TESTIMONIALS
+                    EVENTS
                   </li>
                   <li
                     onClick={() => {

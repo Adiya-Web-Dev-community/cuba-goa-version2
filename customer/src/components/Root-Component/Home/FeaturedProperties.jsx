@@ -110,13 +110,13 @@ const FeaturedProperties = ({ properties, viewRooms }) => {
               <h3>{property.resortName}</h3>
               <p>{property.resortDescription}</p>
               
-              <button 
+              {/* <button 
                 className="view-rooms-btn"
                 onClick={() => viewRooms(property._id, property.resortName)}
               >
                 <span>View Rooms</span>
                 <SiCodereview className="icon" />
-              </button>
+              </button> */}
             </div>
           </div>
         ))}

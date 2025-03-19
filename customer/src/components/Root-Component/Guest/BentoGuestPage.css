@@ -6,8 +6,8 @@
 
 .farmstay-hero {
   position: relative;
-  height: 500px;
-  background-image: url('https://images.unsplash.com/photo-1599419200989-18d2429e9d8d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhcm0lMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D');
+  height: 600px;
+  background-image: url('../../../assets/house-3955920_1280.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -41,10 +41,11 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.farmstay-hero-subtitle {
+.farmstay-hero-subtitle  {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color:white;
 }
 
 .farmstay-cta-button {

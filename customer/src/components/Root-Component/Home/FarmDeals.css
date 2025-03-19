@@ -129,9 +129,24 @@
   }
   
   .reviews {
-    color: #718096;
+     color: #718096;
     font-size: 0.9rem;
   }
+
+  .book-button {
+    background: linear-gradient(to right, #93f226fc,#b7fa61e1);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-button:hover {
+    background-color: #1a365d;
+  }
+  
   
   @media (max-width: 768px) {
     .deals-container {

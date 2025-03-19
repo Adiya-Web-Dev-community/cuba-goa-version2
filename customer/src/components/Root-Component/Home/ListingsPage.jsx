@@ -7,6 +7,7 @@ import {
   Star,
 
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./ListingsPage.css";
 import { BookingModal } from './../BookingPreview/BookingModal';
 
@@ -21,7 +22,7 @@ const ListingsPage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
+  const navigate = useNavigate();
   const listings = [
     {
       id: 1,
@@ -238,9 +239,9 @@ const ListingsPage = () => {
 
                 <button
                   className="btn-grad"
-                  onClick={() => handleBookNow(listing)}
+                  onClick={() => navigate(`/spa-details/spa._id`)}
                 >
-                  Book Now
+                 View More
                 </button>
               </div>
             </div>

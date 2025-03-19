@@ -1,7 +1,10 @@
-import React from 'react';
+import {useState} from 'react';
 import { Star } from 'lucide-react';
 import './FarmDeals.css'
+import { BookingModal } from './../BookingPreview/BookingModal';
 const FarmDeals = () => {
+  const [showModal, setShowModal] = useState(false);
+    const [selectedListing, setSelectedListing] = useState(null);
   const farmListings = [
     {
       id: 1,
@@ -43,7 +46,10 @@ const FarmDeals = () => {
       image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdXNlfGVufDB8fDB8fHww"
     }
   ];
-
+  const handleBookNow = (listing) => {
+    setSelectedListing(listing);
+    setShowModal(true);
+  };
   return (
     <div className="deals-container">
       <div className="deals-header">
@@ -75,10 +81,21 @@ const FarmDeals = () => {
                 <span className="rating">{farm.rating}</span>
                 <span className="reviews">({farm.reviews} Reviews)</span>
               </div>
+              <button className="book-button" onClick={() => handleBookNow(farm)}>Book Now</button>
             </div>
           </div>
         ))}
       </div>
+       {showModal && selectedListing && (
+              <BookingModal
+                listing={selectedListing}
+                onClose={() => setShowModal(false)}
+                onSubmit={(formData) => {
+                  console.log('Booking Details:', formData);
+                  setShowModal(false);
+                }}
+              />
+            )}
     </div>
   );
 };

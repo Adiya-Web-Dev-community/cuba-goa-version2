@@ -10,36 +10,29 @@ import cloud from "../../../assets/spaCloud.jpg";
 // import { Image } from 'react-bootstrap'
 import axios from "../../../helpers/axios";
 
-// import HomeList from '../home-list/HomeList';
-// import Pagination from '../home-list/Pagination';
-// import resortImage from '../../../assets/CUBA_PATNEM_BEACH_BUNGALOWS.jpg'
-// import axios from "axios";
+
 import { Link, useNavigate } from "react-router-dom";
 import arrow from "../../../assets/arrow.png";
 import { location2 } from "react-icons-kit/icomoon/location2";
 import { Icon } from "react-icons-kit";
 import { cross } from "react-icons-kit/icomoon/cross";
 import Footer from "../Footer/Footer";
-import { Box, Button, Typography, Modal } from "@mui/material";
-import cubaIcon from "../../../assets/logocubagoa.png";
+import { Box, Button,  Modal } from "@mui/material";
+
 import { toast } from "react-hot-toast";
 import FeaturedProperties from "./FeaturedProperties";
 import { useDispatch } from "react-redux";
 
 //calender
-import { Calendar, DateRange, DateRangePicker } from "react-date-range";
+import {  DateRange, DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 
 import { SlCalender } from "react-icons/sl";
-
+ 
 //dropdown
-import { IoIosArrowDown, IoIosChatbubbles } from "react-icons/io";
 
-//chat icon
-import { IoLogoSnapchat } from "react-icons/io5";
-import ChatOpeningButton from "../Chat/ChatOpeningButton";
 
 import ListingsPage from "./ListingsPage";
 
@@ -204,27 +197,36 @@ const Home = () => {
   }, []);
 
   //check_availability
-  const handleCheckAvailable = () => {
-    if (resortId === "") {
-      toast.error("Choose resort to check availability");
-    } else {
-      console.log("resortdata", resortData);
+  //check_availability
+const handleCheckAvailable = () => {
+  console.log("Check availability button clicked");  // Add this line
+  console.log("Resort ID:", resortId);              // Add this line
+  console.log("Check-in date:", checkindate);       // Add this line
+  console.log("Check-out date:", checkoutdate);     // Add this line
+  
+  if (resortId === "") {
+    toast.error("Choose resort to check availability");
+    console.log("Error: No resort selected");       // Add this line
+  } else {
+    console.log("Resort data:", resortData);
 
-      if (checkindate !== "" && checkoutdate !== "") {
-        dispatch({
-          type: "set_checkin",
-          payload: { checkindate: checkindate },
-        });
-        dispatch({
-          type: "set_checkout",
-          payload: { checkoutdate: checkoutdate },
-        });
-        viewRooms(resortData._id, resortData.resortName);
-      } else {
-        toast.error("Select dates to check availability");
-      }
+    if (checkindate !== "" && checkoutdate !== "") {
+      dispatch({
+        type: "set_checkin",
+        payload: { checkindate: checkindate },
+      });
+      dispatch({
+        type: "set_checkout",
+        payload: { checkoutdate: checkoutdate },
+      });
+      console.log("Navigating to rooms page for resort:", resortData.resortName); // Add this line
+      viewRooms(resortData._id, resortData.resortName);
+    } else {
+      toast.error("Select dates to check availability");
+      console.log("Error: No dates selected");       // Add this line
     }
-  };
+  }
+};
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -523,7 +525,7 @@ const Home = () => {
           </div>
           <h1 className="title">Featured Properties</h1>
           <p className="description">
-            our forms houes offers a variety of experience
+          Our farm houses offers a variety of experience
           </p>
         </div>
 
@@ -650,7 +652,7 @@ const Home = () => {
               <h4 className="modal_containt_header">Welcome Back!</h4>
               <p className="modal_main_containt">
                 As a token of our appreciation, enjoy a 20% discount on your
-                next purchase!
+                Next booking!
               </p>
               <p className=" modal_code">
                 Use code: <span className="code_higlight">REPEAT20</span>

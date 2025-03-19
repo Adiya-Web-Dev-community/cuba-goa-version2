@@ -231,7 +231,7 @@ const Header = ({ auth, setAuth }) => {
             Contact Us
           </Link>
           <Link to={"/guestex"} className="nav_link nav_header_2">
-            Gest Experience
+          Guest Experience
           </Link>
 
           

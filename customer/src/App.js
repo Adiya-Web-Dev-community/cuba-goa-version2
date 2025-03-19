@@ -35,6 +35,7 @@ import Testimonials from "./components/Root-Component/Home/Testimonials";
 import FarmServices from './components/Root-Component/Services/Services';
 import Payment from "./components/Root-Component/Payment/Payment";
 import BentoGuestPage from "./components/Root-Component/Guest/GuestPage";
+
 // import bgImage from "../src/assets/alpine-hut-3225908_1280.jpg"
 const SplashScreen = () => {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const SplashScreen = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate("/");
-        }, 1000);
+        }, 500);
 
         return () => clearTimeout(timer);
     }, [navigate]);
@@ -55,8 +56,9 @@ const SplashScreen = () => {
             <div className="splash-overlay"></div>
             <div className="splash-content">
                 <h1 className="splash-title">Happy Day at Mayi Farms</h1>
-                    <p className="splash-text">Growing Sustainably, Living Naturally</p>
-                    <p className="splash-text">From Our Farm to Your Family</p>
+                    <p className="splash-text">Find us to get lost into peace...</p>
+                    <p className="splash-text">Your Farmhouse Escape Starts Here</p>
+                
             </div>
         </div>
     );
@@ -80,6 +82,7 @@ function App() {
 
         {showSplash ? (
           <SplashScreen />
+          
         ) : (
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -124,6 +127,7 @@ function App() {
               <Route path="/chat" element={<ChatArea />} />
 
               <Route path="/payment" element={<Payment />} />
+              
             </Route>
           </Routes>
         )}

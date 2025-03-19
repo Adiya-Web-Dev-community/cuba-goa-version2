@@ -94,7 +94,7 @@ export const BookingModal = ({ listing, onClose, onSubmit }) => {
 
             <div className="booking-form-row">
               <div className="booking-form-group">
-                <label>Number of Females</label>
+                <label>Number of Guests</label>
                 <input
                   type="number"
                   name="noOfFemale"

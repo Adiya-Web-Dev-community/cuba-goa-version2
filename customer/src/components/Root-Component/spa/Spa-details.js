@@ -148,7 +148,7 @@ export default function SpaDetails() {
     ],
     outdoor: ["Lawn", "Swimming pool", "Garden", "play area", "parking"],
     mediaTech: ["Projector Screen", "Music System", "wifi", "lighting"],
-    activeity: [
+    activities: [
       "camping",
       "Rain dance",
       "Box Cricket ",

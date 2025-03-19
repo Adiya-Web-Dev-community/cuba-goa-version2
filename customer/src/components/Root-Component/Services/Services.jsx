@@ -110,7 +110,7 @@ function FarmServices() {
   return (
     <div className="services-container">
       {/* Hero Section */}
-      <div className="hero-section" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAyfHxob3VzZXxlbnwwfHwwfHx8MA%3D%3D')` }}>
+      <div className="hero-section" style={{ backgroundImage: '../../../assets/mountains-6933693_1280.jpg' }}>
         <div className="hero-overlay">
           <div className="hero-content">
             <h1 className="hero-title">Premium Farm Services</h1>
